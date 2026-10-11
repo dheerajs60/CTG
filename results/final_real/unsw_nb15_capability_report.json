@@ -1,0 +1,10 @@
+{
+    "dataset": "UNSW-NB15",
+    "has_source_endpoint": false,
+    "has_destination_endpoint": false,
+    "has_timestamp": false,
+    "is_chronologically_ordered": false,
+    "has_attack_labels": true,
+    "supports_temporal_topology": false,
+    "supports_flow_classification": true
+}

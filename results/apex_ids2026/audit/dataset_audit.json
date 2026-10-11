@@ -1,0 +1,35 @@
+{
+    "file_identity": {
+        "path": "/Users/kovoordheeraj/Documents/CN Lab CTG/CTG Dataset/APEX-IDS2026/apex_ids2026_hc_subset.parquet",
+        "size_bytes": 1462787712,
+        "sha256_checksum": "7e7855964ddc8061804fa48acfd6c2a3e1891462466654f9294cdab58744730c",
+        "format": "parquet"
+    },
+    "schema_critical_fields": {
+        "has_flow_start": true,
+        "has_src_ip": true,
+        "has_dst_ip": true,
+        "has_label": true
+    },
+    "data_quality": {
+        "total_records": 69107018,
+        "missing_flow_start": 0,
+        "missing_src_ip": 0,
+        "missing_dst_ip": 0,
+        "missing_label": 0
+    },
+    "temporal_integrity": {
+        "min_timestamp": "2026-06-21 20:38:18.010000",
+        "max_timestamp": "2026-08-03 01:04:48.575000",
+        "distinct_dates": 44
+    },
+    "endpoint_identity": {
+        "unique_src_ips": 412906,
+        "unique_dst_ips": 42421
+    },
+    "label_integrity": {
+        "Benign_Verified": 26901115,
+        "Attack_Verified": 42205903
+    },
+    "verdict": "PASS"
+}

@@ -1,0 +1,8 @@
+{
+    "timestamp_generated": "2026-10-10T14:56:06.282132",
+    "dataset_path": "/Users/kovoordheeraj/Documents/CN Lab CTG/CTG Dataset/APEX-IDS2026/apex_ids2026_hc_subset.parquet",
+    "window_policy": "24_hours",
+    "total_snapshots": 44,
+    "total_edges_across_time": 8951536,
+    "directed": true
+}

@@ -1,0 +1,11 @@
+torch>=2.0.0
+torch_geometric
+numpy
+pandas
+scikit-learn
+networkx
+pyyaml
+pytest
+datasets
+matplotlib
+seaborn

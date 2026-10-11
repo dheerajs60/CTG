@@ -1,0 +1,23 @@
+{
+    "dataset_name": "UNSW-NB15",
+    "provenance": "Local CSV files",
+    "train_set": {
+        "row_count": 175341,
+        "normal_count": 56000,
+        "attack_count": 119341,
+        "missing_values": 0,
+        "endpoint_coverage": "Proxy only (derived signatures, no explicit IP)"
+    },
+    "test_set": {
+        "row_count": 82332,
+        "normal_count": 37000,
+        "attack_count": 45332,
+        "missing_values": 0,
+        "endpoint_coverage": "Proxy only (derived signatures, no explicit IP)"
+    },
+    "limitations": [
+        "Lacks true temporal chronological causality (records are pre-shuffled in public release).",
+        "Lacks host-level IP addresses; network nodes are simulated via flow signatures.",
+        "Lacks ground-truth topological attack sequences for RGAR evaluation."
+    ]
+}

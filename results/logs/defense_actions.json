@@ -1,0 +1,21 @@
+[
+    {
+        "evidence": "High GV Score",
+        "intervention": {
+            "edge": [
+                113,
+                26
+            ],
+            "cost": 1.5,
+            "collateral": 0,
+            "residual": 0.5
+        },
+        "status": "SIMULATED_SUCCESS",
+        "rollback_info": {
+            "restored_edge": [
+                113,
+                26
+            ]
+        }
+    }
+]

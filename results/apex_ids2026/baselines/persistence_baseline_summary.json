@@ -1,0 +1,6 @@
+{
+    "model": "persistence",
+    "task": "edge_prediction",
+    "validation_f1_mean": 0.4510068721623739,
+    "test_f1_mean": 0.4137653390437314
+}

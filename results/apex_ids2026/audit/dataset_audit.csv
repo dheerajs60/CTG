@@ -1,0 +1,22 @@
+category,metric,value
+file_identity,path,/Users/kovoordheeraj/Documents/CN Lab CTG/CTG Dataset/APEX-IDS2026/apex_ids2026_hc_subset.parquet
+file_identity,size_bytes,1462787712
+file_identity,sha256_checksum,7e7855964ddc8061804fa48acfd6c2a3e1891462466654f9294cdab58744730c
+file_identity,format,parquet
+schema_critical_fields,has_flow_start,True
+schema_critical_fields,has_src_ip,True
+schema_critical_fields,has_dst_ip,True
+schema_critical_fields,has_label,True
+data_quality,total_records,69107018
+data_quality,missing_flow_start,0
+data_quality,missing_src_ip,0
+data_quality,missing_dst_ip,0
+data_quality,missing_label,0
+temporal_integrity,min_timestamp,2026-06-21 20:38:18.010000
+temporal_integrity,max_timestamp,2026-08-03 01:04:48.575000
+temporal_integrity,distinct_dates,44
+endpoint_identity,unique_src_ips,412906
+endpoint_identity,unique_dst_ips,42421
+label_integrity,Benign_Verified,26901115
+label_integrity,Attack_Verified,42205903
+global,verdict,PASS

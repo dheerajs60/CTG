@@ -1,0 +1,86 @@
+# ==============================================================================
+# Counterfactual Topology Genesis (CTG) — Git Ignore Rules
+# ==============================================================================
+
+# Operating System & IDE
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Python & Environment
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+ENV/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+.pytest_cache/
+.coverage
+htmlcov/
+*.log
+
+# Compressed Archives & Downloads (explicitly excluded)
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+*.rar
+*.7z
+*.crdownload
+
+# Unprocessed Large Datasets & Standalone Large Data Subsets (>50MB)
+datasets/
+CTG Dataset/
+archive/
+*.parquet
+UNSW_NB15_testing-set(in).csv
+UNSW_NB15_training-set.csv
+
+# Large Model Checkpoints & Raw Predictions (>100MB)
+*.pt
+*.pth
+*.joblib
+results/checkpoints/
+results/checkpoints_backup/
+results/apex_ids2026/predictions/
+results/apex_ids2026_backup_v1/
+results/apex_ids2026/graphs/edge_lists/
+
+# Whitelist essential verified metrics, diagnostics, and figures
+!results/apex_ids2026/dataset_statistics.csv
+!results/apex_ids2026/graphs/graph_diagnostics.csv
+!results/apex_ids2026/graphs/graph_metadata.json
+!results/apex_ids2026/graphs/graph_transition_statistics.csv
+!results/apex_ids2026/evolvegcn/evolvegcn_aggregate_summary.json
+!results/apex_ids2026/evolvegcn/evolvegcn_vs_persistence_results.csv
+!results/apex_ids2026/tables/
+!results/apex_ids2026/figures/
+!results/metrics/
+!results/final_real/
+!figures/
