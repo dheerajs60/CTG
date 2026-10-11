@@ -36,7 +36,7 @@ Modern Network Intrusion Detection Systems (NIDS) primarily analyze static flow 
 
 ## 3. Visual Gallery & Architectural Figures
 
-All publication figures are maintained in vector formats (`.svg`, `.pdf`) and high-resolution 300-DPI `.png` in [`figures/final_paper/`](figures/final_paper/) and [`figures/nrefigures/`](figures/nrefigures/).
+All publication figures are maintained in vector formats (`.svg`, `.pdf`) and high-resolution 300-DPI `.png` in [`figures/final_paper/`](figures/final_paper/).
 
 ### 3.1 CTG System Architecture
 ![CTG Architecture](figures/final_paper/fig01_ctg_architecture.png)
@@ -45,7 +45,7 @@ All publication figures are maintained in vector formats (`.svg`, `.pdf`) and hi
 ---
 
 ### 3.2 Dataset Scope and Suitability Benchmark
-![Dataset Scope Comparison](figures/nrefigures/fig10_dataset_scope_comparison_unified.png)
+![Dataset Scope Comparison](figures/final_paper/fig10_dataset_scope_comparison_unified.png)
 *Figure 2: Comprehensive 4-panel evaluation comparing APEX-IDS2026, CIC-IDS2017, and 7 established NIDS benchmarks across dataset volume, temporal duration, topological criteria, and CTG analytical suitability.*
 
 ---
@@ -88,20 +88,8 @@ All publication figures are maintained in vector formats (`.svg`, `.pdf`) and hi
 
 ```
 CTG/
-├── CTG/                        # Minimal standalone core package
-│   ├── ctg_engine.py           # Graph transition and anomaly operators
-│   ├── dataset_parser.py       # High-throughput chronological flow parsing
-│   ├── rgar_cgb_search.py      # Theoretical counterfactual search interfaces
-│   └── main.py                 # Core CLI entry point
-├── CTGMetrics/                 # Submission and publication packaging
-│   ├── 01_Manuscript/          # Camera-ready manuscript markdown
-│   ├── 02_Figures/             # Curated publication figures (.png, .pdf, .svg)
-│   ├── 03_Metrics_and_Tables/  # Recomputed CSV metrics and verified tables
-│   ├── 08_Reproduction_Code/   # Standalone reproducibility verification scripts
-│   └── nrefigures/             # Extended multi-dataset scope comparison figures
 ├── figures/                    # Unified figure vectors and raster renders
-│   ├── final_paper/            # Paper figures (fig01 - fig10) in SVG, PDF, PNG
-│   └── nrefigures/             # Dataset scale, scope, and suitability figures
+│   └── final_paper/            # Paper figures (fig01 - fig10) in SVG, PDF, PNG
 ├── paper/                      # Scientific documentation and empirical protocols
 │   ├── manuscript.md           # Full academic research paper
 │   ├── CLAIM_EVIDENCE_MAP.md   # Mathematical tracing of claims to empirical data

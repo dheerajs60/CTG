@@ -9,10 +9,8 @@ import pandas as pd
 BASE_DIR = Path("/Users/kovoordheeraj/Documents/CN Lab CTG")
 CSV_PATH = BASE_DIR / "results/metrics/dataset_scope_comparison.csv"
 FIG_FINAL_DIR = BASE_DIR / "figures/final_paper"
-FIG_CTG_METRICS_DIR = Path("/Users/kovoordheeraj/Documents/CTGMetrics/nrefigures")
 
 FIG_FINAL_DIR.mkdir(parents=True, exist_ok=True)
-FIG_CTG_METRICS_DIR.mkdir(parents=True, exist_ok=True)
 
 def save_fig(fig, path_without_ext):
     """Save figure in PNG (300 dpi), PDF, and SVG with tight bbox."""
@@ -124,7 +122,6 @@ def generate_dataset_scope_comparison_figures():
     
     # Save Figure 1
     save_fig(fig1, str(FIG_FINAL_DIR / "fig08_dataset_scale_temporal_scope"))
-    save_fig(fig1, str(FIG_CTG_METRICS_DIR / "fig08_dataset_scale_temporal_scope"))
     plt.close(fig1)
 
     # =========================================================================
@@ -274,7 +271,6 @@ def generate_dataset_scope_comparison_figures():
     
     # Save Figure 2
     save_fig(fig2, str(FIG_FINAL_DIR / "fig09_dataset_topology_ctg_suitability"))
-    save_fig(fig2, str(FIG_CTG_METRICS_DIR / "fig09_dataset_topology_ctg_suitability"))
     plt.close(fig2)
 
     # =========================================================================
@@ -368,7 +364,6 @@ def generate_dataset_scope_comparison_figures():
                     facecolor='white', framealpha=0.95, edgecolor='#CCCCCC', bbox_to_anchor=(0.5, 0.01))
 
     save_fig(fig_comb, str(FIG_FINAL_DIR / "fig10_dataset_scope_comparison_unified"))
-    save_fig(fig_comb, str(FIG_CTG_METRICS_DIR / "fig10_dataset_scope_comparison_unified"))
     plt.close(fig_comb)
 
     print("All dataset scope comparison figures generated successfully.")
