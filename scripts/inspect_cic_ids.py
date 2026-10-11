@@ -14,7 +14,7 @@ def get_sha256(filepath):
 
 def main():
     print("Inspecting CIC-IDS2017 dataset...")
-    base_dir = "data/cic_ids2017/TrafficLabelling "
+    base_dir = "datasets/cic_ids2017/TrafficLabelling "
     files = glob.glob(f"{base_dir}/*.csv")
     
     manifest = {

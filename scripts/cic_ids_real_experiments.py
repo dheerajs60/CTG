@@ -7,7 +7,7 @@ from sklearn.metrics import precision_score, recall_score, f1_score, roc_auc_sco
 def main():
     print("Running CIC-IDS2017 Real Temporal Topology Experiments...")
     
-    file_path = "data/cic_ids2017/TrafficLabelling /Wednesday-workingHours.pcap_ISCX.csv"
+    file_path = "datasets/cic_ids2017/TrafficLabelling /Wednesday-workingHours.pcap_ISCX.csv"
     
     if not os.path.exists(file_path):
         print(f"Error: Dataset not found at {file_path}")

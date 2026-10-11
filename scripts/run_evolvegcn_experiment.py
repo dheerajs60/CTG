@@ -58,7 +58,7 @@ def generate_candidates(G_curr, G_next, seed):
     return list(all_edges), list(labels)
 
 def build_snapshots():
-    file_path = "data/cic_ids2017/TrafficLabelling /Wednesday-workingHours.pcap_ISCX.csv"
+    file_path = "datasets/cic_ids2017/TrafficLabelling /Wednesday-workingHours.pcap_ISCX.csv"
     df = pd.read_csv(file_path, encoding='latin1', low_memory=False)
     df.columns = df.columns.str.strip()
     df['Timestamp'] = pd.to_datetime(df['Timestamp'], errors='coerce')

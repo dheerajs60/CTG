@@ -5,7 +5,7 @@ import networkx as nx
 def main():
     print("Building CIC-IDS2017 Temporal Graph Pipeline...")
     # Load Wednesday data as an example for building the graph (manageable size)
-    file_path = "data/cic_ids2017/TrafficLabelling /Wednesday-workingHours.pcap_ISCX.csv"
+    file_path = "datasets/cic_ids2017/TrafficLabelling /Wednesday-workingHours.pcap_ISCX.csv"
     
     # Read CSV
     df = pd.read_csv(file_path, encoding='latin1', low_memory=False)

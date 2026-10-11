@@ -26,6 +26,10 @@ class EvolveGCNH(nn.Module):
             nn.Linear(out_channels, 1)
         )
         
+    def forward(self, x, edge_index, h_state=None):
+        """Standard nn.Module forward pass delegating to forward_graph."""
+        return self.forward_graph(x, edge_index, h_state)
+
     def forward_graph(self, x, edge_index, h_state=None):
         """
         Processes a single graph snapshot and returns node embeddings and the updated hidden state.
