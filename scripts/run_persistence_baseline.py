@@ -2,8 +2,9 @@ import pandas as pd
 from pathlib import Path
 import json
 
-GRAPHS_DIR = Path("/Users/kovoordheeraj/Documents/CN Lab CTG/results/apex_ids2026/graphs")
-OUTPUT_DIR = Path("/Users/kovoordheeraj/Documents/CN Lab CTG/results/apex_ids2026/baselines")
+REPO_ROOT = Path(__file__).resolve().parent.parent
+GRAPHS_DIR = REPO_ROOT / "results/apex_ids2026/graphs"
+OUTPUT_DIR = REPO_ROOT / "results/apex_ids2026/baselines"
 OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
 def run_persistence_baseline():

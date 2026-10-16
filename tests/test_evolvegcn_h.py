@@ -40,5 +40,29 @@ def test_evolvegcn_forward():
     assert model.initial_weight.grad is not None
     print("EvolveGCN-H tests passed!")
 
+
+def test_topological_node_features():
+    from models.evolve_gcn import compute_topological_node_features
+    # Graph: 0 -> 1, 0 -> 2, 1 -> 2 (3 nodes)
+    edge_index = torch.tensor([[0, 0, 1], [1, 2, 2]], dtype=torch.long)
+    feats = compute_topological_node_features(edge_index, num_nodes=3, feature_dim=8)
+    
+    assert feats.shape == (3, 8)
+    assert not torch.isnan(feats).any()
+    assert not torch.isinf(feats).any()
+    
+    # Node 0: out=2, in=0
+    assert feats[0, 0] == 0.0 # in_deg
+    assert feats[0, 1] == 2.0 # out_deg
+    assert feats[0, 2] == 2.0 # total_deg
+    
+    # Node 2: out=0, in=2
+    assert feats[2, 0] == 2.0 # in_deg
+    assert feats[2, 1] == 0.0 # out_deg
+    assert feats[2, 2] == 2.0 # total_deg
+
+
 if __name__ == "__main__":
     test_evolvegcn_forward()
+    test_topological_node_features()
+

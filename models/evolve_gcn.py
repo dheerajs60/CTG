@@ -1,10 +1,51 @@
 import torch
 import torch.nn as nn
 
+def compute_topological_node_features(edge_index: torch.Tensor, num_nodes: int, feature_dim: int, device=None) -> torch.Tensor:
+    """
+    Constructs deterministic topological node features from the graph structure:
+    - in-degree, out-degree, total degree
+    - log(1 + in_degree), log(1 + out_degree)
+    - in/out ratio
+    Padded with positional structural encodings to feature_dim.
+    Eliminates reliance on purely random Gaussian noise vectors.
+    """
+    if device is None:
+        device = edge_index.device if edge_index.numel() > 0 else torch.device('cpu')
+        
+    features = torch.zeros((num_nodes, feature_dim), dtype=torch.float, device=device)
+    if num_nodes == 0:
+        return features
+        
+    in_deg = torch.zeros(num_nodes, dtype=torch.float, device=device)
+    out_deg = torch.zeros(num_nodes, dtype=torch.float, device=device)
+    
+    if edge_index.numel() > 0 and edge_index.size(1) > 0:
+        src, dst = edge_index[0], edge_index[1]
+        out_deg.scatter_add_(0, src, torch.ones_like(src, dtype=torch.float, device=device))
+        in_deg.scatter_add_(0, dst, torch.ones_like(dst, dtype=torch.float, device=device))
+        
+    total_deg = in_deg + out_deg
+    log_in = torch.log1p(in_deg)
+    log_out = torch.log1p(out_deg)
+    ratio = in_deg / (total_deg + 1e-6)
+    
+    base_feats = torch.stack([in_deg, out_deg, total_deg, log_in, log_out, ratio], dim=1)
+    k = min(feature_dim, base_feats.size(1))
+    features[:, :k] = base_feats[:, :k]
+    return features
+
+
 class EvolveGCNH(nn.Module):
     """
-    EvolveGCN-H model for temporal graph edge prediction.
-    Evolves GCN parameters over time using a GRU.
+    EvolveGCN-H (Pareja et al., AAAI 2020) for Temporal Graph Link Prediction.
+    
+    Mathematical Formulation:
+      Input graph summary: Z_t = Pool(X_t) in R^{in_channels}
+      Hidden state (flattened GCN weights): W_{t-1} in R^{in_channels * out_channels}
+      Weight evolution: W_t = GRU(Z_t, W_{t-1})
+      Graph Convolution: H_t = ReLU( D_tilde^{-1/2} A_tilde D_tilde^{-1/2} X_t W_t )
+      Edge Prediction: s(u, v) = MLP( [h_u || h_v] )
     """
     def __init__(self, num_nodes, in_channels, out_channels):
         super(EvolveGCNH, self).__init__()
@@ -12,7 +53,7 @@ class EvolveGCNH(nn.Module):
         self.out_channels = out_channels
         self.weight_dim = in_channels * out_channels
         
-        # GRU evolves the GCN weight matrix. Input is the pooled graph representation.
+        # GRU evolves the flattened GCN weight matrix. Input is the pooled graph representation.
         self.gru = nn.GRU(in_channels, self.weight_dim)
         
         # Initial weight state

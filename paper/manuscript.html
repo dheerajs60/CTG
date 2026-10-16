@@ -1,0 +1,2263 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>manuscript</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #1a1a1a;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+  <script
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js"
+  type="text/javascript"></script>
+</head>
+<body>
+<h1
+id="temporal-link-prediction-in-network-security-telemetry-evaluating-graph-dynamics-heuristic-baselines-and-negative-sampling-regimes">Temporal
+Link Prediction in Network Security Telemetry: Evaluating Graph
+Dynamics, Heuristic Baselines, and Negative Sampling Regimes</h1>
+<p><strong>Dheeraj Kovoord</strong><span
+class="math inline">\(^{a,*}\)</span>, <strong>Research
+Team</strong><span class="math inline">\(^{a}\)</span><br />
+<span class="math inline">\(^{a}\)</span> <em>Department of Computer
+Science and Engineering, National Institute of Technology Karnataka,
+Surathkal, India</em><br />
+<span class="math inline">\(^{*}\)</span> <em>Corresponding author.
+Email: dheeraj.kovoord@example.edu</em></p>
+<hr />
+<h2 id="highlights">Highlights</h2>
+<ul>
+<li>Multi-scale temporal graph dynamics are quantified across 69.1
+million enterprise flows (APEX-IDS2026) and cyber-range telemetry
+(CIC-IDS2017).</li>
+<li>CIC-IDS2017 exhibits higher measured daily edge novelty (68.09%) and
+symmetric turnover (81.61% Jaccard) than continuous enterprise telemetry
+(56.25% novelty, 72.71% turnover), countering the assumption of
+topological stasis.</li>
+<li>Uniform random negative sampling inflates the precision of
+historical memory heuristics to <span class="math inline">\(\ge
+99.8\%\)</span>, whereas hard historical negatives expose severe
+precision collapse (<span class="math inline">\(34.43\%\)</span> for
+unbounded memory).</li>
+<li>Under high-churn conditions, sliding-window memory (EdgeBank-tw,
+<span class="math inline">\(W=2\)</span>) achieves 69.78% F1 on APEX,
+while Common Neighbors achieves 45.24% F1 on CIC, outperforming adapted
+recurrent GCN models.</li>
+<li>Diagnostic instrumentation of adapted EvolveGCN-H reveals severe
+training instability, where unconstrained optimization drives
+pre-sigmoid logits into saturation regimes associated with degenerate
+all-zero or all-one predictions.</li>
+</ul>
+<hr />
+<h2 id="abstract">Abstract</h2>
+<p>Temporal graph representations of network telemetry promise to
+capture structural communication dynamics that flow-level classifiers
+overlook. However, evaluating temporal link prediction in network
+security entails methodological pitfalls that risk producing illusory
+performance claims. In this study, we empirically investigate temporal
+link prediction and multi-scale graph dynamics across two distinct
+network security datasets: <strong>APEX-IDS2026</strong> (a 44-day
+continuous hybrid-cloud telemetry stream comprising 69.1 million flows
+with cryptographically verified Zenodo archive checksums) and
+<strong>CIC-IDS2017</strong> (a 5-day laboratory cyber-range testbed
+evaluated on its single chronological daily test transition from Day 3
+to Day 4). First, we compute multi-scale graph dynamics across six
+dataset-window configurations spanning four temporal window scales
+(1-hour, 6-hour, 12-hour, and 24-hour windows) and discover that
+CIC-IDS2017 exhibits higher measured daily edge novelty (68.09%
+vs. 56.25%) and symmetric turnover (81.61% vs. 72.71% Jaccard distance)
+than APEX-IDS2026, countering the prior assumption that this cyber-range
+testbed capture is topologically static. Second, we systematically
+compare two evaluation protocols: <strong>Setting A (Hard Historical
+Negatives)</strong>, which evaluates edges observed in earlier telemetry
+that became inactive, and <strong>Setting B (Mixed Random
+Negatives)</strong>, which samples non-edges uniformly from active-node
+pairs (<span class="math inline">\(V_t \times V_t\)</span>). Across
+eight evaluated predictors over five fixed random seeds, we demonstrate
+that random negative sampling inflates the precision of historical
+memory baselines (Persistence, EdgeBank-binary, EdgeBank-tw) to
+near-perfection (<span class="math inline">\(\ge 99.8\%\)</span>),
+masking critical link-extinction failures: under Setting A, Persistence
+precision falls to 48.50% on CIC-IDS2017 and 89.74% on APEX-IDS2026,
+while unbounded memory (EdgeBank-∞) collapses to 34.43% and 47.02%
+precision—falling below 50% precision on the 1:1 balanced candidate
+benchmark. Third, under high-churn conditions (CIC-IDS2017 Setting A),
+Common Neighbors outperforms Persistence (45.24% vs. 35.22% F1), while
+time-windowed memory (EdgeBank-tw, <span
+class="math inline">\(W=2\)</span>) achieves the highest F1 (69.78%) on
+APEX-IDS2026. In addition to thresholded F1, we report continuous
+threshold-free metrics (ROC-AUC and Average Precision), resolving
+baseline artifacts such as Jaccard’s threshold-induced zero F1. Finally,
+we transparently report the training dynamics of EvolveGCN-H on
+structural degree features, documenting seed sensitivity, optimization
+instability, and subsequent pre-sigmoid logit saturation associated with
+degenerate all-zero or all-one outputs without asserting unproven causal
+links. We emphasize that five seeds on CIC-IDS2017’s daily split measure
+candidate-sampling and run variability across a single temporal
+transition rather than generalization across independent test periods.
+We restrict all conclusions to the evaluated datasets and temporal
+splits, and provide reproducible, deterministic candidate-sampling and
+baseline implementations.</p>
+<p><strong>Keywords:</strong> Temporal Link Prediction; Network Security
+Telemetry; Dynamic Graphs; Negative Sampling; Heuristic Baselines;
+EvolveGCN; Graph Dynamics.</p>
+<hr />
+<h2 id="introduction">1. Introduction</h2>
+<p>Intrusion detection systems (IDS) increasingly explore graph-based
+representations of network telemetry, modeling IP endpoints as nodes and
+communication sessions as temporal edges. Dynamic graph neural networks
+(GNNs), such as EvolveGCN, have been proposed to predict future
+interaction topology and identify anomalous edge formations. However,
+recent empirical audits in the broader dynamic graph literature have
+highlighted severe evaluation vulnerabilities: complex temporal GNNs
+frequently underperform simple memorization heuristics (such as
+Persistence or EdgeBank) when evaluated under realistic conditions,
+while flawed negative candidate sampling protocols can artificially
+flatter model metrics.</p>
+<p>In network security, these pitfalls are magnified by extreme network
+scale, non-stationary host behavior, and high topological churn. Two
+critical empirical questions emerge: 1. <strong>The Negative Sampling
+Illusion:</strong> Does the observed performance of link predictors
+reflect genuine topological understanding, or is it an artifact of
+sampling non-edges from a vast, sparse candidate universe where
+arbitrary endpoint pairs rarely interact? 2. <strong>Topological
+Dynamics vs. Memory:</strong> How does the rate of structural churn
+across time scales affect the viability of temporal heuristic baselines
+versus structural graph features?</p>
+<h3 id="contributions">1.1 Contributions</h3>
+<p>In this paper, we conduct a controlled empirical evaluation of
+temporal link prediction and topological dynamics, making the following
+contributions: * <strong>Multi-Scale Graph Dynamics Audit:</strong> We
+construct chronological snapshot sequences across six dataset-scale
+configurations spanning four distinct window granularities (24h, 12h, 6h
+for APEX-IDS2026; 24h, 6h, 1h for CIC-IDS2017). We measure directional
+edge recurrence and novelty alongside symmetric turnover (canonical
+Jaccard distance and Dice dissimilarity), establishing that CIC-IDS2017
+exhibits higher edge churn than continuous enterprise telemetry, with
+sub-daily variance driven by diurnal collection pauses. *
+<strong>Separation of Negative Sampling Regimes:</strong> We formalize
+and evaluate two candidate regimes: <strong>Setting A (Hard Historical
+Negatives)</strong>, which strictly tests expired historical
+communication links (<span class="math inline">\(E_{\le t} \setminus
+E_{t+1}\)</span>), and <strong>Setting B (Mixed Random
+Negatives)</strong>, which evaluates non-edges among active snapshot
+nodes (<span class="math inline">\(V_t \times V_t \setminus
+E_{t+1}\)</span>). We show that Setting B produces an illusion of
+near-100% precision for memory baselines, whereas Setting A exposes
+substantial precision degradation. * <strong>Controlled Five-Seed
+Benchmark:</strong> We evaluate seven heuristic baselines—Persistence,
+EdgeBank-∞ (binary and frequency), EdgeBank-tw (<span
+class="math inline">\(W=2\)</span>, binary), Common Neighbors
+(directed), Jaccard Coefficient, and Adamic-Adar—alongside EvolveGCN-H
+across five fixed random seeds (<code>[42, 100, 123, 456, 999]</code>).
+Within each seed run, all eight models are evaluated on strictly
+identical candidate sets without temporal leakage or negative padding,
+while negative non-edge samples vary across seeds to measure
+candidate-sampling variability. We report both thresholded
+classification metrics (F1, precision, recall) and continuous ranking
+metrics (ROC-AUC and Average Precision). * <strong>Transparent GNN
+Stability Characterization:</strong> We document the training dynamics
+and seed sensitivity of EvolveGCN-H when trained purely on topological
+features, documenting optimization instability and subsequent logit
+saturation extremes associated with degenerate all-zero or all-one
+collapse without asserting an unverified causal mechanism. *
+<strong>Explicit Boundary Delineation:</strong> We explicitly state what
+this work does <em>not</em> claim: we do not claim to reconstruct
+attack-generating processes counterfactually, we do not claim validated
+causal defense intervention, and we do not claim that five random seeds
+capture temporal invariance beyond the observed datasets.</p>
+<h3 id="structure-of-the-paper">1.2 Structure of the Paper</h3>
+<p>The remainder of this paper is organized as follows: Section 2
+reviews related literature on dynamic graph representation learning,
+evaluation pitfalls, and security telemetry. Section 3 formalizes the
+next-snapshot temporal link prediction problem, candidate sampling
+protocols, baseline models, adapted EvolveGCN-H architecture, and
+multi-scale graph dynamics metrics. Section 4 describes the datasets,
+provenance verifications, chronological partitioning, and experimental
+setup. Section 5 presents the empirical results across graph dynamics,
+link prediction benchmarks, and recurrent GCN optimization dynamics.
+Section 6 provides scientific discussion and resolves metric artifacts.
+Section 7 presents limitations and threats to validity, and Section 8
+concludes the paper.</p>
+<hr />
+<h2 id="related-work">2. Related Work</h2>
+<h3 id="temporal-link-prediction-and-dynamic-gnns">2.1 Temporal Link
+Prediction and Dynamic GNNs</h3>
+<p>Dynamic graph representation learning models continuous-time or
+discrete-time network evolution. Discrete-time models, such as EvolveGCN
+(Pareja et al., 2020), evolve Graph Convolutional Network (GCN)
+parameters across time-steps using recurrent architectures (GRU or LSTM)
+driven by graph-level summaries. Self-attention architectures, such as
+DySAT (Sankar et al., 2020), instead capture dynamic node interactions
+across graph snapshots using joint structural and temporal attention
+mechanisms without recurrent parameter evolution. Continuous-time
+models, including TGAT (Xu et al., 2020) and TGN (Rossi et al., 2020),
+update node memory states upon individual edge arrival events.
+Comprehensive benchmarking suites such as DyGLib (Wang et al., 2023) and
+the Temporal Graph Benchmark (TGB; Huang et al., 2023) have standardized
+evaluation protocols across dynamic networks, highlighting that
+performance varies considerably with candidate sampling and temporal
+granularity.</p>
+<h3 id="heuristic-baselines-and-evaluation-pitfalls">2.2 Heuristic
+Baselines and Evaluation Pitfalls</h3>
+<p>Poursafaei et al. (2022) exposed a foundational issue in dynamic link
+prediction benchmarks: on many standard datasets, simple memorization
+baselines (termed EdgeBank) that predict the recurrence of previously
+observed edges often outperform sophisticated temporal GNNs.
+Furthermore, they demonstrated that standard negative sampling—drawing
+random non-edges uniformly from the node set—presents an artificially
+easy classification task, as random node pairs typically share no
+historical interaction context. Evaluating against “historical
+negatives” (edges active in the past but absent in the target snapshot)
+provides a substantially more rigorous test of temporal link extinction,
+an evaluation principle reinforced across diverse dynamic graph domains
+by the Temporal Graph Benchmark (Huang et al., 2023).</p>
+<h3 id="graph-learning-in-network-intrusion-detection">2.3 Graph
+Learning in Network Intrusion Detection</h3>
+<p>Graph learning for intrusion detection models IP communications to
+identify lateral movement, scanning, and exfiltration (Sharafaldin et
+al., 2018; Ferrag et al., 2022; Bilot et al., 2023). In a systematic
+survey, Bilot et al. (2023) categorized graph neural network
+architectures across network and host telemetry, highlighting recurring
+challenges in dynamic graph representation, scalability, and realistic
+evaluation. Furthermore, network intrusion detection is uniquely
+vulnerable to the base-rate fallacy (Axelsson, 2000): in real networks,
+communication graphs are exceptionally sparse, meaning that even a low
+false-positive rate produces an overwhelming volume of false alarms.
+Sommer and Paxson (2010) and Arp et al. (2022) emphasized that machine
+learning models in security must be evaluated with strict chronological
+realism, accounting for non-stationarity, sampling bias, class
+imbalance, and the absence of reliable causal ground truth.</p>
+<hr />
+<h2 id="methodology-problem-formulation">3. Methodology &amp; Problem
+Formulation</h2>
+<p><img src="../figures/fig01_pipeline_architecture.png"
+alt="Figure 1: Methodological Pipeline Architecture" /><br />
+<em>Figure 1: Methodological pipeline architecture for empirical
+temporal link prediction in network security telemetry. The 5-stage
+empirical workflow encompasses: (1) Telemetry Ingestion from continuous
+enterprise (APEX-IDS2026) and laboratory cyber-range (CIC-IDS2017)
+sources; (2) Chronological Graph Snapshot Construction across multiple
+temporal scales with explicit boundary handling; (3) Candidate
+Stratification &amp; Negative Sampling Regimes (Setting A Hard
+Historical Negatives vs. Setting B Mixed Random Negatives); (4)
+Evaluated Predictor Suite comprising temporal memory baselines, local
+topological heuristics, and adapted EvolveGCN-H; and (5) Evaluation
+Protocols encompassing controlled 5-seed benchmarks and uncapped
+continuous ranking evaluations. Inherited conceptual modules from
+preliminary proposals (RGAR, CGB, counterfactual reconstruction, and
+adaptive defense) are strictly eliminated.</em></p>
+<h3 id="temporal-graph-snapshots">3.1 Temporal Graph Snapshots</h3>
+<p>Let <span class="math inline">\(F = \{(u_i, v_i, t_i)\}\)</span> be a
+chronological stream of network flows, where <span
+class="math inline">\(u_i \in \mathcal{V}\)</span> is the source IP
+address, <span class="math inline">\(v_i \in \mathcal{V}\)</span> is the
+destination IP address, and <span class="math inline">\(t_i \in
+\mathbb{R}^+\)</span> is the flow start timestamp. Following standard
+temporal network formulations (Holme &amp; Saramäki, 2012), given a
+temporal window size <span class="math inline">\(\Delta t\)</span>, we
+partition the timeline into discrete non-overlapping snapshots <span
+class="math inline">\(\mathcal{G} = (G_0, G_1, \dots, G_T)\)</span>.</p>
+<p>Each snapshot <span class="math inline">\(G_t = (V_t, E_t)\)</span>
+is a directed multigraph collapsed into unique directed edges: <span
+class="math display">\[E_t = \{(u, v) \mid \exists (u, v, t_i) \in F
+\text{ with } t \cdot \Delta t \le t_i &lt; (t+1) \cdot \Delta
+t\}\]</span> <span class="math display">\[V_t = \{u \mid \exists v, (u,
+v) \in E_t\} \cup \{v \mid \exists u, (u, v) \in E_t\}\]</span> The
+historical graph up to time <span class="math inline">\(t\)</span> is
+denoted <span class="math inline">\(G_{\le t} = (V_{\le t}, E_{\le
+t})\)</span> where <span class="math inline">\(V_{\le t} =
+\bigcup_{\tau=0}^t V_\tau\)</span> and <span
+class="math inline">\(E_{\le t} = \bigcup_{\tau=0}^t
+E_\tau\)</span>.</p>
+<h3 id="next-snapshot-temporal-link-prediction">3.2 Next-Snapshot
+Temporal Link Prediction</h3>
+<p>The prediction objective is to evaluate whether a candidate directed
+edge <span class="math inline">\((u, v)\)</span> will appear in the
+subsequent snapshot <span class="math inline">\(G_{t+1}\)</span>,
+conditioning strictly on information available up to and including
+snapshot <span class="math inline">\(G_t\)</span>.</p>
+<p>To prevent evaluation bias and future-information leakage, candidate
+positive edges in <span class="math inline">\(G_{t+1}\)</span> are
+partitioned into four disjoint subsets: 1. <strong>Recurring Edges
+(<span class="math inline">\(E_{t+1}^{\text{rec}}\)</span>):</strong>
+Edges active in both snapshots: <span class="math inline">\(E_{t+1} \cap
+E_t\)</span>. On APEX-IDS2026 test transitions, recurring edges account
+for <span class="math inline">\(46.01\% \pm 6.82\%\)</span> of target
+edges; on the CIC-IDS2017 Day 4 transition, they represent <span
+class="math inline">\(30.94\%\)</span> (9,939 of 32,120 edges). 2.
+<strong>New Edges Between Concurrently Active Known Nodes (<span
+class="math inline">\(E_{t+1}^{\text{active}}\)</span>):</strong> Newly
+formed edges where both endpoints were active in the immediately
+preceding snapshot: <span class="math inline">\(\{(u, v) \in E_{t+1}
+\setminus E_t \mid u, v \in V_t\}\)</span>. These account for <span
+class="math inline">\(25.75\% \pm 2.80\%\)</span> of target edges on
+APEX-IDS2026 and <span class="math inline">\(38.39\%\)</span> (12,330
+edges) on CIC-IDS2017. 3. <strong>New Edges Involving Dormant Historical
+Nodes (<span
+class="math inline">\(E_{t+1}^{\text{dormant}}\)</span>):</strong> Edges
+where at least one endpoint was dormant in <span
+class="math inline">\(G_t\)</span> but was observed in prior historical
+telemetry: <span class="math inline">\(\{(u, v) \in E_{t+1} \setminus
+E_t \mid u, v \in V_{\le t} \land (u \notin V_t \lor v \notin
+V_t)\}\)</span>. These represent <span class="math inline">\(18.31\% \pm
+3.06\%\)</span> of target edges on APEX-IDS2026 and <span
+class="math inline">\(21.19\%\)</span> (6,805 edges) on CIC-IDS2017. 4.
+<strong>Unseen-Node Edges (<span
+class="math inline">\(E_{t+1}^{\text{unseen}}\)</span>):</strong> Edges
+where at least one endpoint was never observed in historical telemetry
+prior to snapshot <span class="math inline">\(t+1\)</span>: <span
+class="math inline">\(\{(u, v) \in E_{t+1} \mid u \notin V_{\le t} \lor
+v \notin V_{\le t}\}\)</span>. These represent <span
+class="math inline">\(9.92\% \pm 1.68\%\)</span> of target edges on
+APEX-IDS2026 and <span class="math inline">\(9.48\%\)</span> (3,046
+edges) on CIC-IDS2017.</p>
+<p>In accordance with dynamic graph benchmarking standards (Poursafaei
+et al., 2022; Wang et al., 2023), link prediction evaluation is
+restricted to known-node edges: <span
+class="math display">\[E_{t+1}^{\text{eval}} = E_{t+1}^{\text{rec}} \cup
+E_{t+1}^{\text{active}} \cup E_{t+1}^{\text{dormant}} = \{(u, v) \in
+E_{t+1} \mid u, v \in V_{\le t}\}\]</span> Edges involving unobserved
+endpoints (<span class="math inline">\(E_{t+1}^{\text{unseen}}\)</span>)
+are excluded from candidate sets, as pure topological models without
+attribute inductive bias cannot infer links for unseen nodes without
+arbitrary guessing. Across evaluated test transitions in the capped
+benchmark, <span class="math inline">\(77.85\%\)</span> (1,557 / 2,000)
+of positive candidates on CIC-IDS2017 and <span
+class="math inline">\(79.64\%\)</span> (19,113 / 24,000 across 12 test
+transitions) on APEX-IDS2026 connect hosts that were concurrently active
+in <span class="math inline">\(V_t\)</span>, while the remaining <span
+class="math inline">\(22.15\%\)</span> (443 / 2,000) on CIC and <span
+class="math inline">\(20.36\%\)</span> (4,887 / 24,000) on APEX involve
+at least one known endpoint re-emerging from dormancy.</p>
+<h3 id="negative-sampling-regimes">3.3 Negative Sampling Regimes</h3>
+<p>To evaluate the impact of negative candidate selection, we enforce
+two strictly separated regimes:</p>
+<h4 id="setting-a-hard-historical-negatives">Setting A: Hard Historical
+Negatives</h4>
+<p>Negative candidate edges are sampled uniformly without replacement
+from historically observed links between known endpoints that are
+inactive in the target snapshot: <span
+class="math display">\[E_{\text{neg}}^{\text{hard}}(t+1) \subseteq \{(u,
+v) \in E_{\le t} \setminus E_{t+1} \mid u, v \in V_{\le t}\}\]</span>
+These candidates represent historically observed communication channels
+that ceased transmission at <span class="math inline">\(t+1\)</span>. In
+Setting A, endpoint eligibility is strictly symmetric with positive
+candidates: both classes are sampled from the historical universe <span
+class="math inline">\(V_{\le t} \times V_{\le t}\)</span>. This directly
+evaluates the model’s ability to detect temporal link extinction rather
+than simply distinguishing known active edges from arbitrary
+non-communicating hosts.</p>
+<h4 id="setting-b-mixed-random-negatives">Setting B: Mixed Random
+Negatives</h4>
+<p>Negative candidate edges are sampled uniformly without replacement
+from non-edges between hosts active in the current snapshot: <span
+class="math display">\[E_{\text{neg}}^{\text{mixed}}(t+1) \subseteq
+\{(u, v) \in V_t \times V_t \mid (u, v) \notin E_{t+1}, u \neq
+v\}\]</span> Crucially, Setting B samples negatives from <span
+class="math inline">\(V_t \times V_t\)</span> (active nodes in snapshot
+<span class="math inline">\(t\)</span>) rather than the full historical
+node universe <span class="math inline">\(V_{\le t} \times V_{\le
+t}\)</span>. Restricting the candidate pool to currently transmitting
+hosts ensures that evaluated negative candidates represent concurrently
+active network participants rather than arbitrary pairs of hosts that
+have ceased communicating.</p>
+<p><strong>Candidate-Universe Asymmetry Limitation in Setting
+B:</strong> This formulation introduces an important operational
+asymmetry: while positive candidates in Setting B are drawn from <span
+class="math inline">\(E_{t+1}^{\text{eval}}\)</span> (which includes a
+<span class="math inline">\(\approx 18-21\%\)</span> minority of
+re-emerging historical nodes from <span class="math inline">\(V_{&lt;t}
+\setminus V_t\)</span>), negative candidates are drawn exclusively from
+<span class="math inline">\(V_t \times V_t\)</span>. Consequently,
+negative candidates in Setting B never contain dormant historical
+endpoints. Expanding Setting B negatives to the entire historical
+universe <span class="math inline">\(V_{\le t} \times V_{\le t}\)</span>
+would dilute the negative candidate pool into extreme sparsity dominated
+by long-dead endpoints, whereas restricting positive candidates strictly
+to <span class="math inline">\(V_t \times V_t\)</span> would discard
+over 18% of legitimate re-emerging enterprise communications as out of
+scope. For snapshot-local baselines (Persistence, Common Neighbors,
+Jaccard), any candidate containing a dormant endpoint in <span
+class="math inline">\(G_t\)</span> has zero local degree and
+automatically receives a score of 0, structurally capping their positive
+recall. Conversely, memory baselines and global neural models can score
+dormant pairs, but Setting B’s negative set does not measure their
+discrimination on dormant non-edges. We report this candidate-universe
+asymmetry as an explicit methodological limitation rather than claiming
+unseen-node or candidate-universe concerns are fully resolved.</p>
+<p>In both settings, candidate datasets maintain an exact <span
+class="math inline">\(1:1\)</span> positive-to-negative ratio (<span
+class="math inline">\(K = \min(|E_{t+1}^{\text{eval}}|, 2000)\)</span>
+candidates per class), preventing class-balance shifts between settings.
+Duplicate candidates, self-loops, and silent negative padding are
+strictly prohibited; sampling fails with an explicit exception if
+insufficient unique candidates exist. Candidate pools are stably sorted
+in lexicographical order prior to sampling or shuffling, ensuring 100%
+deterministic, process-independent candidate generation across different
+Python processes regardless of <code>PYTHONHASHSEED</code>. Within each
+seed run, candidate positive and negative sets are strictly identical
+across all evaluated models. Across seeds, negative non-edge draws vary
+deterministically with the PRNG seed (<code>seed + t</code> and
+<code>seed + 200 + t</code>) to capture candidate sampling
+sensitivity.</p>
+<h3 id="evaluated-predictive-models-baseline-formulations">3.4 Evaluated
+Predictive Models &amp; Baseline Formulations</h3>
+<p>We benchmark eight distinct predictive models spanning memory
+heuristics, topological proximity heuristics, and recurrent graph neural
+networks.</p>
+<h4 id="memory-heuristics">Memory Heuristics</h4>
+<ul>
+<li><strong>Persistence:</strong> Predicts that edges active in the
+immediate preceding snapshot will persist into the next: <span
+class="math display">\[\hat{y}_{\text{pers}}(u, v) = \mathbb{I}[(u, v)
+\in E_t]\]</span></li>
+<li><strong>EdgeBank-∞ (Binary &amp; Frequency):</strong> Implements
+unbounded historical memory (Poursafaei et al., 2022). Binary mode
+predicts edge presence if observed at any point in historical telemetry:
+<span class="math display">\[\hat{y}_{\text{eb-bin}}(u, v) =
+\mathbb{I}[(u, v) \in E_{\le t}]\]</span> Frequency mode scores edges by
+their historical snapshot recurrence frequency: <span
+class="math display">\[s_{\text{eb-freq}}(u, v) = \frac{1}{t+1}
+\sum_{\tau=0}^t \mathbb{I}[(u, v) \in E_\tau]\]</span></li>
+<li><strong>EdgeBank-tw (Time-Windowed Memory):</strong> Maintains a
+sliding window over the last <span class="math inline">\(W\)</span>
+snapshots: <span class="math display">\[M_t^{(W)} = \bigcup_{\tau = t -
+W + 1}^t E_\tau, \quad \hat{y}_{\text{eb-tw}}(u, v) = \mathbb{I}[(u, v)
+\in M_t^{(W)}]\]</span> We evaluate <span
+class="math inline">\(W=2\)</span> snapshots, selected <em>a priori</em>
+without test-split tuning.</li>
+</ul>
+<h4 id="topological-proximity-heuristics">Topological Proximity
+Heuristics</h4>
+<p>Heuristic models evaluate the local structural proximity of endpoints
+in <span class="math inline">\(G_t\)</span>, adapting foundational
+topological link-prediction measures (Liben-Nowell &amp; Kleinberg,
+2007): * <strong>Common Neighbors (Directed):</strong> Evaluates
+directed two-hop path existence (out-neighbors of <span
+class="math inline">\(u\)</span> overlapping with in-neighbors of <span
+class="math inline">\(v\)</span>): <span
+class="math display">\[s_{\text{CN}}(u, v) = |N_{\text{out}}(u) \cap
+N_{\text{in}}(v)|\]</span> * <strong>Jaccard Coefficient
+(Undirected):</strong> Evaluates neighbor overlap normalized by total
+degree: <span class="math display">\[s_{\text{JC}}(u, v) = \frac{|N(u)
+\cap N(v)|}{|N(u) \cup N(v)|}\]</span> * <strong>Adamic-Adar
+(Undirected):</strong> Penalizes high-degree shared neighbors: <span
+class="math display">\[s_{\text{AA}}(u, v) = \sum_{z \in N(u) \cap N(v)}
+\frac{1}{\log |N(z)|}\]</span></p>
+<p><strong>Thresholding Convention &amp; Baseline Behavior:</strong> For
+discrete integer heuristic scores (Common Neighbors), the decision
+threshold is fixed at <span class="math inline">\(\tau = 1.0\)</span>,
+predicting an edge if at least one shared directed two-hop path exists
+(<span class="math inline">\(s_{\text{CN}} \ge 1\)</span>). For
+Persistence and EdgeBank binary baselines, the canonical threshold is
+<span class="math inline">\(\tau = 0.5\)</span>. In the benchmark
+script, <span class="math inline">\(\tau = 1.0\)</span> is also applied
+to continuous topological heuristics (Adamic-Adar and Jaccard
+Coefficient). For Adamic-Adar, scores represent continuous
+degree-weighted contributions <span
+class="math inline">\(s_{\text{AA}}(u, v) = \sum_{z \in N(u) \cap N(v),
+\text{deg}(z)&gt;1} \frac{1}{\ln \text{deg}(z)}\)</span>. Under <span
+class="math inline">\(\tau = 1.0\)</span>, predicting an edge requires
+either a shared neighbor with low degree (<span
+class="math inline">\(\text{deg}(z) = 2\)</span>, where <span
+class="math inline">\(1/\ln 2 \approx 1.4427 \ge 1.0\)</span>) or
+multiple shared neighbors summing to <span class="math inline">\(\ge
+1.0\)</span>. Any single shared neighbor with <span
+class="math inline">\(\text{deg}(z) \ge 3\)</span> yields <span
+class="math inline">\(1/\ln \text{deg}(z) \le 1/\ln 3 \approx 0.9102
+&lt; 1.0\)</span> and is classified as negative. This property explains
+why thresholded Adamic-Adar exhibits high precision (<span
+class="math inline">\(72.26\% - 90.47\%\)</span>) but sub-1% recall
+(<span class="math inline">\(0.70\% - 0.95\%\)</span>) across both
+datasets: it aggressively filters out pairs that only share high-degree
+hubs. For Jaccard Coefficient, <span
+class="math inline">\(s_{\text{JC}}(u, v) \in [0, 1]\)</span> represents
+a normalized overlap ratio; a score of <span
+class="math inline">\(s_{\text{JC}} = 1.0\)</span> occurs only when two
+distinct nodes share 100% of their neighbors (<span
+class="math inline">\(N(u) = N(v)\)</span>). In our evaluated benchmark
+test candidates, no candidate pair satisfied this condition (the maximum
+observed Jaccard score on positive candidates was <span
+class="math inline">\(0.06\)</span> on CIC-IDS2017 Day 4 and <span
+class="math inline">\(0.72\)</span> across APEX-IDS2026 test
+transitions), causing every candidate pair in the benchmark to score
+below threshold and yielding <span class="math inline">\(0.0\%\)</span>
+F1. This zero-F1 outcome is strictly a threshold-specific artifact of
+applying an integer cutoff to a normalized ratio; as demonstrated below,
+threshold-free ranking metrics (ROC-AUC and Average Precision) establish
+that Jaccard possesses legitimate continuous ranking ability.</p>
+<h3 id="adapted-evolvegcn-h-architecture">3.5 Adapted EvolveGCN-H
+Architecture</h3>
+<p>We evaluate an adapted implementation inspired by EvolveGCN-H (Pareja
+et al., 2020) that adapts GCN weight matrices across discrete time-steps
+using a recurrent architecture. Rather than utilizing the top-<span
+class="math inline">\(k\)</span> node selection mechanism and matrix-GRU
+of the original EvolveGCN-H formulation, this implementation uses global
+mean pooling and standard parameter vectorization. At step <span
+class="math inline">\(t\)</span>, node features <span
+class="math inline">\(X_t \in \mathbb{R}^{|V| \times
+d_{\text{in}}}\)</span> are processed by GCN weights <span
+class="math inline">\(W_t \in \mathbb{R}^{d_{\text{in}} \times
+d_{\text{out}}}\)</span>: <span class="math display">\[H_t =
+\text{ReLU}\left(\tilde{D}_t^{-1/2} \tilde{A}_t \tilde{D}_t^{-1/2} X_t
+W_t\right)\]</span> where <span class="math inline">\(\tilde{A}_t = A_t
++ I_N\)</span> is the adjacency matrix with added self-loops.</p>
+<p>To evolve weights across time without relying on top-<span
+class="math inline">\(k\)</span> node selection, node features are
+pooled into a global graph summary vector <span
+class="math inline">\(Z_t = \frac{1}{|V|} \sum_{i=1}^{|V|} X_t[i, :] \in
+\mathbb{R}^{d_{\text{in}}}\)</span>. A standard Gated Recurrent Unit
+(GRU) evolves the vectorized GCN weight parameters <span
+class="math inline">\(\text{vec}(W_t) \in \mathbb{R}^{d_{\text{in}}
+\cdot d_{\text{out}}}\)</span>: <span
+class="math display">\[\text{vec}(W_t) = \text{GRU}\left(Z_t,
+\text{vec}(W_{t-1})\right)\]</span> and the updated hidden state is
+reshaped into the 2D GCN weight matrix: <span class="math display">\[W_t
+= \text{reshape}\left(\text{vec}(W_t), (d_{\text{in}},
+d_{\text{out}})\right)\]</span> Edge link probabilities are predicted
+via an MLP over concatenated endpoint embeddings: <span
+class="math display">\[\hat{p}(u, v) = \sigma\left(\text{MLP}([H_t[u, :]
+\parallel H_t[v, :]])\right)\]</span></p>
+<p>To eliminate reliance on purely random Gaussian node features (which
+introduce severe evaluation variance), we construct
+<strong>deterministic structural node features</strong> on <span
+class="math inline">\(G_t\)</span>: <span class="math display">\[X_t[u,
+:] = \left[d_{\text{in}}(u), d_{\text{out}}(u), d_{\text{tot}}(u),
+\log(1 + d_{\text{in}}(u)), \log(1 + d_{\text{out}}(u)),
+\frac{d_{\text{in}}(u)}{d_{\text{tot}}(u) + 10^{-6}}\right]\]</span>
+padded to <span class="math inline">\(d_{\text{in}} = 16\)</span>. The
+model is trained for 3 epochs per seed using Adam (<span
+class="math inline">\(\text{lr}=0.005\)</span>) with BCE loss
+(<code>nn.BCEWithLogitsLoss</code>) strictly on the training partition.
+Hidden states are evolved sequentially through validation into the test
+partition without gradient updates or future leakage
+(<code>torch.no_grad()</code>). The decision threshold is fixed at the
+canonical midpoint <span class="math inline">\(\tau = 0.5\)</span>.</p>
+<h3 id="multi-scale-graph-dynamics-metrics">3.6 Multi-Scale Graph
+Dynamics Metrics</h3>
+<p>For consecutive snapshots <span
+class="math inline">\(G_{t-1}\)</span> and <span
+class="math inline">\(G_t\)</span>: * <strong>Edge Recurrence
+Rate:</strong> <span class="math inline">\(R_t = \frac{|E_t \cap
+E_{t-1}|}{|E_t|}\)</span> * <strong>Edge Novelty Rate:</strong> <span
+class="math inline">\(N_t = \frac{|E_t \setminus E_{t-1}|}{|E_t|} = 1 -
+R_t\)</span> * <strong>Symmetric Turnover (Jaccard Distance):</strong>
+<span class="math inline">\(T_{\text{Jaccard}} = \frac{|E_t \triangle
+E_{t-1}|}{|E_t \cup E_{t-1}|} = \frac{|E_t \setminus E_{t-1}| + |E_{t-1}
+\setminus E_t|}{|E_t \cup E_{t-1}|}\)</span> * <strong>Normalized
+Symmetric Difference (Dice Dissimilarity):</strong> <span
+class="math inline">\(T_{\text{Dice}} = \frac{|E_t \triangle
+E_{t-1}|}{|E_t| + |E_{t-1}|} = \frac{|E_t \setminus E_{t-1}| + |E_{t-1}
+\setminus E_t|}{|E_t| + |E_{t-1}|}\)</span></p>
+<p>Crucially, edge recurrence <span class="math inline">\(R_t\)</span>
+and novelty <span class="math inline">\(N_t\)</span> are directional
+(asymmetric) rates normalized strictly by the target snapshot volume
+<span class="math inline">\(|E_t|\)</span>. In contrast, turnover
+metrics (<span class="math inline">\(T_{\text{Jaccard}}\)</span> and
+<span class="math inline">\(T_{\text{Dice}}\)</span>) are symmetric
+distance metrics over edge sets capturing total bilateral flux across
+both snapshots. They are complementary measures of graph dynamics, not
+interchangeable equivalents.</p>
+<hr />
+<h2 id="experimental-setup-datasets">4. Experimental Setup &amp;
+Datasets</h2>
+<h3 id="dataset-scope-and-provenance">4.1 Dataset Scope and
+Provenance</h3>
+<ul>
+<li><strong>APEX-IDS2026 (Enterprise Deployment Telemetry):</strong>
+<ul>
+<li><em>Span:</em> 44 continuous days (2026-06-21 to 2026-08-03).</li>
+<li><em>Volume:</em> 69,107,018 curated network flows across 412,906
+source IPs and 42,421 destination IPs.</li>
+<li><em>Archive Integrity:</em> The local dataset archive
+(<code>apex_ids2026_hc_subset.zip</code>, 1,196,059,916 bytes) was
+independently verified against Zenodo deposit DOI
+<code>10.5281/zenodo.22013914</code> (Record 22013914), matching the
+official MD5 checksum <code>115ed72bb8759d3ce90fe17c52a0ee98</code>
+bit-for-bit. The extracted Parquet file (1,462,787,712 bytes; SHA-256
+<code>7e7855964ddc8061804fa48acfd6c2a3e1891462466654f9294cdab58744730c</code>)
+contains exactly 69,107,018 rows.</li>
+<li><em>Label Composition:</em> The 61.07% attack share (42,205,903
+<code>Attack_Verified</code> flows vs. 26,901,115
+<code>Benign_Verified</code> flows) is the direct arithmetic consequence
+of the creators’ High-Confidence subset selection, which isolates Tier 1
+(physical honeypot-matched attacks) and Tier 3 (validated benign
+traffic) while excluding unverified or heuristic tiers.</li>
+<li><em>Provenance Status:</em> While archive file integrity (via
+cryptographic MD5 checksum against the official Zenodo record),
+extracted row count, timestamp range (43.18 calendar days), and
+anonymized IP graph structure are confirmed from the local distribution,
+operational environment claims (e.g., capture on a live MikroTik router
+within ISP production infrastructure, 13,638 unique threat actors from
+60 countries, and a 0% false positive rate for honeypot correlation)
+represent <em>dataset assertions</em> documented in the release that
+cannot be independently confirmed from NetFlow headers alone due to the
+absence of raw PCAP captures.</li>
+<li><em>Daily Snapshots &amp; Boundary Handling:</em> 44 daily graphs
+(<span class="math inline">\(203,444 \pm 40,234\)</span> edges per
+snapshot). The telemetry capture commences midday on Day 0 (2026-06-21,
+216,676 flows; 27,330 directed edges) and terminates early on Day 43
+(2026-08-03, 34,646 flows; 13,446 directed edges), marking these
+intervals as truncated capture boundaries
+(<code>is_partial_boundary=True</code>). Rather than artificially
+filtering or synthesizing boundary traffic, these intervals are
+evaluated directly within the chronological sequence, accounting for the
+boundary volume dips observed in temporal trajectories (Figure 3) and
+testing model resilience to real-world operational monitoring start/stop
+boundaries.</li>
+<li><em>Splits:</em> Days 0–24 (Train, 25 snapshots), Days 25–31
+(Validation, 7 snapshots), Days 32–43 (Test, 12 transitions).</li>
+</ul></li>
+<li><strong>CIC-IDS2017 (Laboratory Cyber-Range Testbed):</strong>
+<ul>
+<li><em>Span:</em> 5 working days (2017-07-03 to 2017-07-07,
+Monday–Friday).</li>
+<li><em>Volume:</em> 2,830,743 flows across 8 files in
+<code>TrafficLabelling/</code>.</li>
+<li><em>Daily Snapshots:</em> 5 daily graphs (<span
+class="math inline">\(35,224 \pm 2,745\)</span> edges per
+snapshot).</li>
+<li><em>Splits:</em> Days 0–2 (Train, Mon–Wed), Day 3 (Validation, Thu),
+Day 4 (Test, Fri, 1 transition).</li>
+<li><em>Methodological Caveats:</em> Prior audits (Engelen et al., 2021)
+identified severe flow-construction anomalies, feature-generation
+artifacts, and label corruption in CIC-IDS2017 flow records. Our
+link-prediction formulation operates strictly on discrete topological
+connectivity (source and destination IP endpoints per snapshot window)
+without conditioning on flow-level semantic attributes or attack labels,
+mitigating semantic feature contamination; however, this structural
+formulation does not eliminate underlying network topology artifacts or
+collection biases inherent in cyber-range testbed traffic.</li>
+</ul></li>
+</ul>
+<p><img src="../figures/fig02_dataset_scale_comparison.png"
+alt="Figure 2: Dataset Scale and Temporal Coverage Comparison" /><br />
+<em>Figure 2: Comparative profiling of evaluated network security
+telemetry streams: APEX-IDS2026 (44-day enterprise stream) and
+CIC-IDS2017 (5-day cyber-range testbed). (A) Total flow volume, unique
+daily directed edges, and active node counts on logarithmic scale. (B)
+Chronological capture duration (days) and count of evaluated 24h daily
+snapshots.</em></p>
+<h3 id="chronological-partitioning-snapshot-granularities">4.2
+Chronological Partitioning &amp; Snapshot Granularities</h3>
+<p>To investigate temporal window effects, graphs are constructed at: *
+APEX-IDS2026: <strong>24-hour</strong> (44 snapshots, 43 transitions),
+<strong>12-hour</strong> (86 snapshots, 85 transitions), and
+<strong>6-hour</strong> (170 snapshots, 169 transitions). * CIC-IDS2017:
+<strong>24-hour</strong> (5 snapshots, 4 transitions),
+<strong>6-hour</strong> (15 snapshots, 14 transitions), and
+<strong>1-hour</strong> (50 snapshots, 49 transitions).</p>
+<p>All transition statistics are aggregated across all consecutive
+window pairs (<span class="math inline">\(N = T-1\)</span>) using the
+unbiased sample standard deviation (<span
+class="math inline">\(ddof=1\)</span>). For sub-daily CIC-IDS2017
+partitions, the timeline spans the full continuous capture period,
+including non-operational overnight hiatuses between daily
+simulations.</p>
+<p><img src="../figures/fig03_chronological_topology_trajectories.png"
+alt="Figure 3: Chronological Node and Edge Trajectories across Daily Snapshots" /><br />
+<em>Figure 3: Chronological topology trajectories showing active nodes
+and unique directed edges across daily snapshots. (A) APEX-IDS2026
+across 44 continuous days, partitioned into Train (Days 0–24, gray),
+Validation (Days 25–31, blue), and Test (Days 32–43, red), with
+truncated boundary windows (Day 0 and Day 43) annotated. (B) CIC-IDS2017
+across 5 weekdays, displaying the single chronological daily test
+transition (Day 3 to Day 4).</em></p>
+<h3 id="evaluation-protocol-candidate-pools-and-metric-formulations">4.3
+Evaluation Protocol, Candidate Pools, and Metric Formulations</h3>
+<p>Link prediction classification performance is measured via Precision,
+Recall, and F1 at decision threshold <span class="math inline">\(\tau =
+0.5\)</span> (or <span class="math inline">\(\tau = 1.0\)</span> for
+integer counts). For continuous scoring models, we report both ROC-AUC
+and Average Precision (PR-AUC) using <code>sklearn.metrics</code>.
+Discrete binary step predictors (Persistence, EdgeBank-binary,
+EdgeBank-tw) are designated <code>N/A (Discrete)</code> for area metrics
+to avoid degenerate step-function distortions.</p>
+<p><strong>Capped Benchmark vs. Uncapped Continuous Test
+Partition:</strong> Our investigation conducts two complementary
+evaluations grounded in distinct candidate pools: 1. <em>Controlled
+Five-Seed Benchmark (Tables 2 &amp; 3, Figures 6–8):</em> To tractably
+evaluate computationally demanding topological heuristics (Common
+Neighbors, Adamic-Adar, Jaccard) alongside neural models across multiple
+seeds, candidate sets are capped at <span class="math inline">\(K =
+2,000\)</span> positive candidate edges per transition, balanced 1:1
+with <span class="math inline">\(K = 2,000\)</span> negative candidates
+(<span class="math inline">\(N = 48,000\)</span> total candidate pairs
+across 12 test transitions on APEX-IDS2026; <span
+class="math inline">\(N = 4,000\)</span> total candidate pairs on
+CIC-IDS2017 Day 4). This controlled candidate universe isolates the
+differential impact of Setting A (Hard Historical Negatives) versus
+Setting B (Mixed Random Negatives) under identical test sizes. 2.
+<em>Uncapped Full-Pool Continuous Evaluation (Figures 12 &amp; 13):</em>
+To assess continuous discriminative capacity, ROC-AUC, and Average
+Precision at full enterprise scale without candidate subsampling, the
+test partition of APEX-IDS2026 is evaluated across all <span
+class="math inline">\(1,628,259\)</span> positive edges where both
+endpoints were observed active in <span
+class="math inline">\(G_t\)</span>, balanced 1:1 with <span
+class="math inline">\(1,628,259\)</span> uniform random non-edges from
+<span class="math inline">\(V_t \times V_t \setminus E_{t+1}\)</span>
+(<span class="math inline">\(N = 3,256,518\)</span> candidate pairs per
+seed; evaluated across Seeds 42, 100, and 1234). Both evaluations are
+genuine empirical artifacts from repository scripts
+(<code>scripts/run_five_seed_benchmark.py</code> and
+<code>scripts/run_evolvegcn_apex.py</code>); their metric differences
+reflect the shift from a capped candidate sample (containing dormant
+endpoints) to an uncapped test partition over all active-node edges.</p>
+<p><strong>Status of Ranking Metrics (MRR and Hits@K):</strong> We
+explicitly clarify why Mean Reciprocal Rank (MRR) and Hits@K (<span
+class="math inline">\(K \in \{10, 50, 100\}\)</span>) are omitted from
+the primary benchmark. For discrete binary step predictors (Persistence,
+EdgeBank-binary, EdgeBank-tw), model predictions take values strictly in
+<span class="math inline">\(\{0, 1\}\)</span>; assigning ranks to
+thousands of tied binary predictions requires arbitrary tie-breaking
+order, rendering MRR and Hits@K mathematically ill-defined for step
+heuristics. Furthermore, on balanced candidate pools with 2,000 positive
+edges per transition, Hits@10 is mathematically bounded by <span
+class="math inline">\(10 / 2000 = 0.005\)</span> (0.5%), meaning that
+even a perfect model cannot achieve Hits@10 <span
+class="math inline">\(&gt; 0.005\)</span>. Therefore, threshold-free
+Receiver Operating Characteristic (ROC-AUC) and Average Precision
+(PR-AUC) represent the scientifically valid continuous ranking
+metrics.</p>
+<p><strong>Scope of Evaluated Architectures:</strong> We benchmark an
+adapted EvolveGCN-H architecture (vectorized GRU parameter evolution
+with global graph summary pooling) against discrete memory and
+topological baselines. Continuous-time dynamic models (TGN; Rossi et
+al., 2020) and dynamic self-attention networks (DySAT; Sankar et al.,
+2020) were omitted because they require microsecond-level continuous
+event queues or fine-grained temporal self-attention over node
+histories. In network telemetry, aggregation into discrete chronological
+snapshots (24h, 12h, 6h, 1h) is necessary to scale to tens of millions
+of network flows across enterprise networks with <span
+class="math inline">\(&gt;400,000\)</span> IP addresses. We retain this
+focused empirical scope and state this omission clearly as an
+architectural boundary.</p>
+<p>Importantly, balanced 1:1 evaluation candidate sets isolate relative
+ranking and discriminative capacity under controlled conditions. In
+operational intrusion detection, active communication links represent an
+infinitesimal fraction of all possible endpoint pairs (<span
+class="math inline">\(&lt; 10^{-5}\)</span>); consequently, ROC-AUC,
+Average Precision, and precision metrics reported on balanced candidate
+sets do not directly indicate operational detection precision or alert
+volumes under extreme production class imbalance.</p>
+<hr />
+<h2 id="results">5. Results</h2>
+<h3 id="multi-scale-graph-dynamics-audit">5.1 Multi-Scale Graph Dynamics
+Audit</h3>
+<p>Table 1 reports the computed multi-scale topological dynamics across
+all six evaluated configurations.</p>
+<p><strong>Table 1: Multi-scale graph dynamics across APEX-IDS2026 and
+CIC-IDS2017.</strong><br />
+<em>Transitions denote evaluated pairs between consecutive observed
+active windows across the capture period (APEX-IDS2026: contiguous 24/7
+telemetry; CIC-IDS2017: daytime captures spanning 5 days, containing 10
+strictly 6h-adjacent and 4 overnight 12h transitions at the 6h scale; 40
+strictly 1h-adjacent, 5 mid-day 3h, and 4 overnight 13h transitions at
+the 1h scale). Values report sample mean and unbiased sample standard
+deviation (<span class="math inline">\(ddof=1\)</span>). Recurrence
+<span class="math inline">\(R_t\)</span> is directional with respect to
+target snapshot <span class="math inline">\(E_t\)</span>, while turnover
+metrics (<span class="math inline">\(T_{\text{Jaccard}}\)</span> and
+<span class="math inline">\(T_{\text{Dice}}\)</span>) are symmetric
+set-theoretic distances. High sub-daily standard deviations on
+CIC-IDS2017 reflect the diurnal contrast between active daytime
+simulations (<span class="math inline">\(R_t \in [25.2\%,
+50.7\%]\)</span> for 6h intra-day) and overnight collection pauses
+(<span class="math inline">\(R_t \in [3.3\%, 7.7\%]\)</span> for 6h
+overnight).</em></p>
+<table>
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 11%" />
+<col style="width: 11%" />
+<col style="width: 11%" />
+<col style="width: 11%" />
+<col style="width: 11%" />
+<col style="width: 11%" />
+<col style="width: 11%" />
+<col style="width: 11%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: left;">Dataset</th>
+<th style="text-align: center;">Window Scale</th>
+<th style="text-align: center;">Windows</th>
+<th style="text-align: center;">Transitions</th>
+<th style="text-align: center;">Mean Edges / Win</th>
+<th style="text-align: center;">Recurrence (<span
+class="math inline">\(R_t\)</span>)</th>
+<th style="text-align: center;">Novelty (<span
+class="math inline">\(N_t\)</span>)</th>
+<th style="text-align: center;">Turnover (<span
+class="math inline">\(T_{\text{Jaccard}}\)</span>)</th>
+<th style="text-align: center;">Turnover (<span
+class="math inline">\(T_{\text{Dice}}\)</span>)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>APEX-IDS2026</strong></td>
+<td style="text-align: center;"><strong>24h (Daily)</strong></td>
+<td style="text-align: center;">44</td>
+<td style="text-align: center;">43</td>
+<td style="text-align: center;">203,444</td>
+<td style="text-align: center;"><span class="math inline">\(43.75\% \pm
+6.07\%\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(56.25\% \pm
+6.07\%\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(72.71\% \pm
+4.15\%\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(57.31\% \pm
+5.93\%\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">APEX-IDS2026</td>
+<td style="text-align: center;"><strong>12h</strong></td>
+<td style="text-align: center;">86</td>
+<td style="text-align: center;">85</td>
+<td style="text-align: center;">132,166</td>
+<td style="text-align: center;"><span class="math inline">\(42.74\% \pm
+3.86\%\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(57.26\% \pm
+3.86\%\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(73.12\% \pm
+2.68\%\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(57.70\% \pm
+3.70\%\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">APEX-IDS2026</td>
+<td style="text-align: center;"><strong>6h</strong></td>
+<td style="text-align: center;">170</td>
+<td style="text-align: center;">169</td>
+<td style="text-align: center;">83,912</td>
+<td style="text-align: center;"><span class="math inline">\(40.33\% \pm
+3.85\%\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(59.67\% \pm
+3.85\%\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(74.86\% \pm
+2.77\%\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(59.90\% \pm
+3.62\%\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>CIC-IDS2017</strong></td>
+<td style="text-align: center;"><strong>24h (Daily)</strong></td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">35,224</td>
+<td style="text-align: center;"><span class="math inline">\(31.91\% \pm
+1.48\%\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(68.09\% \pm
+1.48\%\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(81.61\% \pm
+0.49\%\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(68.93\% \pm
+0.71\%\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">CIC-IDS2017</td>
+<td style="text-align: center;"><strong>6h (Sub-Daily)</strong></td>
+<td style="text-align: center;">15</td>
+<td style="text-align: center;">14</td>
+<td style="text-align: center;">14,019</td>
+<td style="text-align: center;"><span class="math inline">\(27.81\% \pm
+16.92\%\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(72.19\% \pm
+16.92\%\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(90.84\% \pm
+4.80\%\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(83.55\% \pm
+8.00\%\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">CIC-IDS2017</td>
+<td style="text-align: center;"><strong>1h (Fine)</strong></td>
+<td style="text-align: center;">50</td>
+<td style="text-align: center;">49</td>
+<td style="text-align: center;">5,133</td>
+<td style="text-align: center;"><span class="math inline">\(23.29\% \pm
+18.87\%\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(76.71\% \pm
+18.87\%\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(92.11\% \pm
+4.36\%\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(85.68\% \pm
+7.65\%\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>As visualized in Figure 4 and Figure 5, edge novelty on CIC-IDS2017
+is consistently higher than on APEX-IDS2026 across all time scales
+(68.09% vs. 56.25% daily; 76.71% vs. 59.67% fine-grained).
+Correspondingly, Jaccard turnover reaches 81.61% on daily CIC-IDS2017
+graphs and exceeds 90% at sub-daily scales.</p>
+<p><img src="../figures/fig04_transition_flux_added_removed.png"
+alt="Figure 4: Chronological Topological Flux on APEX-IDS2026: Daily Edge Formation, Retention, and Extinction" /><br />
+<em>Figure 4: Chronological edge flux across 43 sequential transitions
+between consecutive 24h windows on APEX-IDS2026: newly added edges
+(red), retained edges (blue), and expired/removed edges (gray). Green
+line traces the symmetric Jaccard turnover distance (<span
+class="math inline">\(T_{\text{Jaccard}}\)</span>).</em></p>
+<p><img src="../figures/fig05_multiscale_dynamics_rates.png"
+alt="Figure 5: Multi-Scale Directional Recurrence, Novelty, and Turnover Rates across APEX-IDS2026 and CIC-IDS2017" /><br />
+<em>Figure 5: Multi-scale graph dynamics across APEX-IDS2026 (left) and
+CIC-IDS2017 (right) evaluating three temporal window sizes per dataset
+(APEX: 24h, 12h, 6h; CIC: 24h, 6h, 1h). Bars display arithmetic mean
+rates across sequential transitions: directional edge recurrence (<span
+class="math inline">\(R_t\)</span>, blue), directional edge novelty
+(<span class="math inline">\(N_t\)</span>, amber), and symmetric
+turnover (<span class="math inline">\(T_{\text{Jaccard}}\)</span>, red).
+Error bars represent <span class="math inline">\(\pm 1\)</span> sample
+standard deviation.</em></p>
+<h3 id="five-seed-link-prediction-benchmark">5.2 Five-Seed Link
+Prediction Benchmark</h3>
+<p>Tables 2 and 3 report the link prediction benchmark across five
+random seeds (<code>[42, 100, 123, 456, 999]</code>), comparing Setting
+A (Hard Historical Negatives) and Setting B (Mixed Random
+Negatives).</p>
+<p><strong>Table 2: Five-seed link prediction benchmark on APEX-IDS2026
+(Days 32–43, 12 test transitions).</strong><br />
+<em>Metrics report arithmetic mean and sample standard deviation across
+5 independent random seed runs (each evaluating per-transition metrics
+across fixed candidate sizes). The 95% confidence intervals (95% CI)
+quantify uncertainty in the 5-run mean under Student’s <span
+class="math inline">\(t\)</span> with 4 degrees of freedom (<span
+class="math inline">\(t_{\text{crit}} = 2.776\)</span>), not temporal
+generalization across unobserved epochs. Ranking ROC-AUC and Average
+Precision (PR-AUC) are evaluated for continuous scoring predictors;
+discrete binary step predictors are marked
+<code>N/A (Discrete)</code>.</em></p>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 12%" />
+<col style="width: 12%" />
+<col style="width: 12%" />
+<col style="width: 12%" />
+<col style="width: 12%" />
+<col style="width: 12%" />
+<col style="width: 12%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: left;">Model</th>
+<th style="text-align: center;">Evaluation Setting</th>
+<th style="text-align: center;">F1 (Mean ± Std)</th>
+<th style="text-align: center;">F1 95% CI</th>
+<th style="text-align: center;">Precision</th>
+<th style="text-align: center;">Recall</th>
+<th style="text-align: center;">ROC-AUC</th>
+<th style="text-align: center;">Average Precision</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>EdgeBank-tw (<span
+class="math inline">\(W=2\)</span>, binary)</strong></td>
+<td style="text-align: center;"><strong>Setting A (Hard)</strong></td>
+<td style="text-align: center;"><strong>69.78% ± 0.08%</strong></td>
+<td style="text-align: center;"><strong>±0.10%</strong></td>
+<td style="text-align: center;"><strong>85.04% ± 0.24%</strong></td>
+<td style="text-align: center;">60.01% ± 0.00%</td>
+<td style="text-align: center;"><em>N/A (Discrete)</em></td>
+<td style="text-align: center;"><em>N/A (Discrete)</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Persistence</strong></td>
+<td style="text-align: center;"><strong>Setting A (Hard)</strong></td>
+<td style="text-align: center;">64.09% ± 0.05%</td>
+<td style="text-align: center;">±0.06%</td>
+<td style="text-align: center;">89.74% ± 0.18%</td>
+<td style="text-align: center;">50.94% ± 0.00%</td>
+<td style="text-align: center;"><em>N/A (Discrete)</em></td>
+<td style="text-align: center;"><em>N/A (Discrete)</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>EdgeBank-∞ (binary)</strong></td>
+<td style="text-align: center;"><strong>Setting A (Hard)</strong></td>
+<td style="text-align: center;">61.47% ± 0.00%</td>
+<td style="text-align: center;">±0.00%</td>
+<td style="text-align: center;">47.02% ± 0.00%</td>
+<td style="text-align: center;">88.77% ± 0.00%</td>
+<td style="text-align: center;"><em>N/A (Discrete)</em></td>
+<td style="text-align: center;"><em>N/A (Discrete)</em></td>
+</tr>
+<tr>
+<td style="text-align: left;">EdgeBank-∞ (frequency)</td>
+<td style="text-align: center;">Setting A (Hard)</td>
+<td style="text-align: center;">48.96% ± 0.02%</td>
+<td style="text-align: center;">±0.03%</td>
+<td style="text-align: center;">96.55% ± 0.14%</td>
+<td style="text-align: center;">33.27% ± 0.00%</td>
+<td style="text-align: center;">0.7642 ± 0.0006</td>
+<td style="text-align: center;">0.8144 ± 0.0006</td>
+</tr>
+<tr>
+<td style="text-align: left;">EvolveGCN-H</td>
+<td style="text-align: center;">Setting A (Hard)</td>
+<td style="text-align: center;">46.36% ± 26.53%</td>
+<td style="text-align: center;">±32.94%</td>
+<td style="text-align: center;">38.67% ± 22.09%</td>
+<td style="text-align: center;">59.35% ± 36.38%</td>
+<td style="text-align: center;">0.5277 ± 0.0545</td>
+<td style="text-align: center;">0.5685 ± 0.0769</td>
+</tr>
+<tr>
+<td style="text-align: left;">Common Neighbors (directed)</td>
+<td style="text-align: center;">Setting A (Hard)</td>
+<td style="text-align: center;">4.05% ± 0.00%</td>
+<td style="text-align: center;">±0.00%</td>
+<td style="text-align: center;">93.46% ± 1.59%</td>
+<td style="text-align: center;">2.08% ± 0.00%</td>
+<td style="text-align: center;">0.5097 ± 0.0002</td>
+<td style="text-align: center;">0.5090 ± 0.0003</td>
+</tr>
+<tr>
+<td style="text-align: left;">Adamic-Adar (undirected)</td>
+<td style="text-align: center;">Setting A (Hard)</td>
+<td style="text-align: center;">1.38% ± 0.00%</td>
+<td style="text-align: center;">±0.00%</td>
+<td style="text-align: center;">90.47% ± 2.43%</td>
+<td style="text-align: center;">0.70% ± 0.00%</td>
+<td style="text-align: center;">0.5321 ± 0.0002</td>
+<td style="text-align: center;">0.5314 ± 0.0005</td>
+</tr>
+<tr>
+<td style="text-align: left;">Jaccard Coefficient (undirected)</td>
+<td style="text-align: center;">Setting A (Hard)</td>
+<td style="text-align: center;">0.00% ± 0.00%</td>
+<td style="text-align: center;">±0.00%</td>
+<td style="text-align: center;">0.00% ± 0.00%</td>
+<td style="text-align: center;">0.00% ± 0.00%</td>
+<td style="text-align: center;">0.5320 ± 0.0002</td>
+<td style="text-align: center;">0.5271 ± 0.0008</td>
+</tr>
+<tr>
+<td style="text-align: left;"><em>EdgeBank-∞ (binary)</em></td>
+<td style="text-align: center;"><em>Setting B (Mixed)</em></td>
+<td style="text-align: center;"><em>94.01% ± 0.01%</em></td>
+<td style="text-align: center;"><em>±0.01%</em></td>
+<td style="text-align: center;"><em>99.95% ± 0.02%</em></td>
+<td style="text-align: center;"><em>88.77% ± 0.00%</em></td>
+<td style="text-align: center;"><em>N/A (Discrete)</em></td>
+<td style="text-align: center;"><em>N/A (Discrete)</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><em>EdgeBank-tw (<span
+class="math inline">\(W=2\)</span>, binary)</em></td>
+<td style="text-align: center;"><em>Setting B (Mixed)</em></td>
+<td style="text-align: center;"><em>74.21% ± 0.01%</em></td>
+<td style="text-align: center;"><em>±0.01%</em></td>
+<td style="text-align: center;"><em>99.98% ± 0.02%</em></td>
+<td style="text-align: center;"><em>60.01% ± 0.00%</em></td>
+<td style="text-align: center;"><em>N/A (Discrete)</em></td>
+<td style="text-align: center;"><em>N/A (Discrete)</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><em>Persistence</em></td>
+<td style="text-align: center;"><em>Setting B (Mixed)</em></td>
+<td style="text-align: center;"><em>66.46% ± 0.01%</em></td>
+<td style="text-align: center;"><em>±0.01%</em></td>
+<td style="text-align: center;"><em>99.98% ± 0.02%</em></td>
+<td style="text-align: center;"><em>50.94% ± 0.00%</em></td>
+<td style="text-align: center;"><em>N/A (Discrete)</em></td>
+<td style="text-align: center;"><em>N/A (Discrete)</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><em>EvolveGCN-H</em></td>
+<td style="text-align: center;"><em>Setting B (Mixed)</em></td>
+<td style="text-align: center;"><em>53.54% ± 29.93%</em></td>
+<td style="text-align: center;"><em>±37.16%</em></td>
+<td style="text-align: center;"><em>51.48% ± 30.01%</em></td>
+<td style="text-align: center;"><em>59.35% ± 36.38%</em></td>
+<td style="text-align: center;"><em>0.6282 ± 0.1200</em></td>
+<td style="text-align: center;"><em>0.6367 ± 0.1172</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><em>EdgeBank-∞ (frequency)</em></td>
+<td style="text-align: center;"><em>Setting B (Mixed)</em></td>
+<td style="text-align: center;"><em>49.40% ± 0.00%</em></td>
+<td style="text-align: center;"><em>±0.00%</em></td>
+<td style="text-align: center;"><em>100.00% ± 0.00%</em></td>
+<td style="text-align: center;"><em>33.27% ± 0.00%</em></td>
+<td style="text-align: center;"><em>0.9438 ± 0.0000</em></td>
+<td style="text-align: center;"><em>0.9438 ± 0.0001</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><em>Common Neighbors (directed)</em></td>
+<td style="text-align: center;"><em>Setting B (Mixed)</em></td>
+<td style="text-align: center;"><em>4.05% ± 0.00%</em></td>
+<td style="text-align: center;"><em>±0.00%</em></td>
+<td style="text-align: center;"><em>97.20% ± 0.33%</em></td>
+<td style="text-align: center;"><em>2.08% ± 0.00%</em></td>
+<td style="text-align: center;"><em>0.5101 ± 0.0000</em></td>
+<td style="text-align: center;"><em>0.5099 ± 0.0001</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><em>Adamic-Adar (undirected)</em></td>
+<td style="text-align: center;"><em>Setting B (Mixed)</em></td>
+<td style="text-align: center;"><em>1.37% ± 0.00%</em></td>
+<td style="text-align: center;"><em>±0.00%</em></td>
+<td style="text-align: center;"><em>58.66% ± 2.69%</em></td>
+<td style="text-align: center;"><em>0.70% ± 0.00%</em></td>
+<td style="text-align: center;"><em>0.4351 ± 0.0017</em></td>
+<td style="text-align: center;"><em>0.5066 ± 0.0006</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><em>Jaccard Coefficient
+(undirected)</em></td>
+<td style="text-align: center;"><em>Setting B (Mixed)</em></td>
+<td style="text-align: center;"><em>0.00% ± 0.00%</em></td>
+<td style="text-align: center;"><em>±0.00%</em></td>
+<td style="text-align: center;"><em>0.00% ± 0.00%</em></td>
+<td style="text-align: center;"><em>0.00% ± 0.00%</em></td>
+<td style="text-align: center;"><em>0.4241 ± 0.0019</em></td>
+<td style="text-align: center;"><em>0.4750 ± 0.0002</em></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><strong>Table 3: Five-seed link prediction benchmark on CIC-IDS2017
+(Day 4 Test Transition: Day 3 to Day 4).</strong><br />
+<em>Metrics report arithmetic mean and sample standard deviation across
+5 independent random seed runs. The 95% confidence intervals (95% CI)
+quantify uncertainty in the 5-run mean under Student’s <span
+class="math inline">\(t\)</span> with 4 degrees of freedom (<span
+class="math inline">\(t_{\text{crit}} = 2.776\)</span>), not temporal
+generalization across unobserved epochs. Ranking ROC-AUC and Average
+Precision (PR-AUC) are evaluated for continuous scoring predictors;
+discrete binary step predictors are marked <code>N/A (Discrete)</code>.
+Crucially, this daily test split evaluates exactly one chronological
+transition (Thursday to Friday); the five seeds measure
+candidate-sampling and parameter-initialization variability within this
+single transition, not independent temporal test periods.</em></p>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 12%" />
+<col style="width: 12%" />
+<col style="width: 12%" />
+<col style="width: 12%" />
+<col style="width: 12%" />
+<col style="width: 12%" />
+<col style="width: 12%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: left;">Model</th>
+<th style="text-align: center;">Evaluation Setting</th>
+<th style="text-align: center;">F1 (Mean ± Std)</th>
+<th style="text-align: center;">F1 95% CI</th>
+<th style="text-align: center;">Precision</th>
+<th style="text-align: center;">Recall</th>
+<th style="text-align: center;">ROC-AUC</th>
+<th style="text-align: center;">Average Precision</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Common Neighbors
+(directed)</strong></td>
+<td style="text-align: center;"><strong>Setting A (Hard)</strong></td>
+<td style="text-align: center;"><strong>45.24% ± 0.24%</strong></td>
+<td style="text-align: center;"><strong>±0.29%</strong></td>
+<td style="text-align: center;"><strong>62.97% ± 0.91%</strong></td>
+<td style="text-align: center;">35.30% ± 0.00%</td>
+<td style="text-align: center;">0.5746 ± 0.0045</td>
+<td style="text-align: center;">0.5495 ± 0.0056</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>EdgeBank-∞ (binary)</strong></td>
+<td style="text-align: center;"><strong>Setting A (Hard)</strong></td>
+<td style="text-align: center;">41.58% ± 0.00%</td>
+<td style="text-align: center;">±0.00%</td>
+<td style="text-align: center;">34.43% ± 0.00%</td>
+<td style="text-align: center;">52.50% ± 0.00%</td>
+<td style="text-align: center;"><em>N/A (Discrete)</em></td>
+<td style="text-align: center;"><em>N/A (Discrete)</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>EdgeBank-tw (<span
+class="math inline">\(W=2\)</span>, binary)</strong></td>
+<td style="text-align: center;"><strong>Setting A (Hard)</strong></td>
+<td style="text-align: center;">40.40% ± 0.21%</td>
+<td style="text-align: center;">±0.25%</td>
+<td style="text-align: center;">41.62% ± 0.43%</td>
+<td style="text-align: center;">39.25% ± 0.00%</td>
+<td style="text-align: center;"><em>N/A (Discrete)</em></td>
+<td style="text-align: center;"><em>N/A (Discrete)</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>EdgeBank-∞
+(frequency)</strong></td>
+<td style="text-align: center;"><strong>Setting A (Hard)</strong></td>
+<td style="text-align: center;">37.46% ± 0.16%</td>
+<td style="text-align: center;">±0.20%</td>
+<td style="text-align: center;">58.51% ± 0.78%</td>
+<td style="text-align: center;">27.55% ± 0.00%</td>
+<td style="text-align: center;">0.3575 ± 0.0011</td>
+<td style="text-align: center;">0.5141 ± 0.0019</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>EvolveGCN-H</strong></td>
+<td style="text-align: center;"><strong>Setting A (Hard)</strong></td>
+<td style="text-align: center;">36.63% ± 28.69%</td>
+<td style="text-align: center;">±35.61%</td>
+<td style="text-align: center;">45.02% ± 28.08%</td>
+<td style="text-align: center;">35.74% ± 37.33%</td>
+<td style="text-align: center;">0.5602 ± 0.2137</td>
+<td style="text-align: center;">0.5381 ± 0.1388</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Persistence</strong></td>
+<td style="text-align: center;"><strong>Setting A (Hard)</strong></td>
+<td style="text-align: center;">35.22% ± 0.22%</td>
+<td style="text-align: center;">±0.28%</td>
+<td style="text-align: center;">48.50% ± 0.84%</td>
+<td style="text-align: center;">27.65% ± 0.00%</td>
+<td style="text-align: center;"><em>N/A (Discrete)</em></td>
+<td style="text-align: center;"><em>N/A (Discrete)</em></td>
+</tr>
+<tr>
+<td style="text-align: left;">Adamic-Adar (undirected)</td>
+<td style="text-align: center;">Setting A (Hard)</td>
+<td style="text-align: center;">1.88% ± 0.00%</td>
+<td style="text-align: center;">±0.00%</td>
+<td style="text-align: center;">72.26% ± 8.63%</td>
+<td style="text-align: center;">0.95% ± 0.00%</td>
+<td style="text-align: center;">0.5909 ± 0.0059</td>
+<td style="text-align: center;">0.5680 ± 0.0083</td>
+</tr>
+<tr>
+<td style="text-align: left;">Jaccard Coefficient (undirected)</td>
+<td style="text-align: center;">Setting A (Hard)</td>
+<td style="text-align: center;">0.00% ± 0.00%</td>
+<td style="text-align: center;">±0.00%</td>
+<td style="text-align: center;">0.00% ± 0.00%</td>
+<td style="text-align: center;">0.00% ± 0.00%</td>
+<td style="text-align: center;">0.5856 ± 0.0052</td>
+<td style="text-align: center;">0.5583 ± 0.0073</td>
+</tr>
+<tr>
+<td style="text-align: left;"><em>EdgeBank-∞ (binary)</em></td>
+<td style="text-align: center;"><em>Setting B (Mixed)</em></td>
+<td style="text-align: center;"><em>68.82% ± 0.02%</em></td>
+<td style="text-align: center;"><em>±0.03%</em></td>
+<td style="text-align: center;"><em>99.87% ± 0.09%</em></td>
+<td style="text-align: center;"><em>52.50% ± 0.00%</em></td>
+<td style="text-align: center;"><em>N/A (Discrete)</em></td>
+<td style="text-align: center;"><em>N/A (Discrete)</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><em>EdgeBank-tw (<span
+class="math inline">\(W=2\)</span>, binary)</em></td>
+<td style="text-align: center;"><em>Setting B (Mixed)</em></td>
+<td style="text-align: center;"><em>56.36% ± 0.02%</em></td>
+<td style="text-align: center;"><em>±0.02%</em></td>
+<td style="text-align: center;"><em>99.90% ± 0.11%</em></td>
+<td style="text-align: center;"><em>39.25% ± 0.00%</em></td>
+<td style="text-align: center;"><em>N/A (Discrete)</em></td>
+<td style="text-align: center;"><em>N/A (Discrete)</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><em>Common Neighbors (directed)</em></td>
+<td style="text-align: center;"><em>Setting B (Mixed)</em></td>
+<td style="text-align: center;"><em>43.37% ± 0.29%</em></td>
+<td style="text-align: center;"><em>±0.36%</em></td>
+<td style="text-align: center;"><em>56.23% ± 0.96%</em></td>
+<td style="text-align: center;"><em>35.30% ± 0.00%</em></td>
+<td style="text-align: center;"><em>0.5435 ± 0.0053</em></td>
+<td style="text-align: center;"><em>0.5343 ± 0.0040</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><em>Persistence</em></td>
+<td style="text-align: center;"><em>Setting B (Mixed)</em></td>
+<td style="text-align: center;"><em>43.31% ± 0.01%</em></td>
+<td style="text-align: center;"><em>±0.01%</em></td>
+<td style="text-align: center;"><em>99.93% ± 0.10%</em></td>
+<td style="text-align: center;"><em>27.65% ± 0.00%</em></td>
+<td style="text-align: center;"><em>N/A (Discrete)</em></td>
+<td style="text-align: center;"><em>N/A (Discrete)</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><em>EdgeBank-∞ (frequency)</em></td>
+<td style="text-align: center;"><em>Setting B (Mixed)</em></td>
+<td style="text-align: center;"><em>43.20% ± 0.01%</em></td>
+<td style="text-align: center;"><em>±0.01%</em></td>
+<td style="text-align: center;"><em>99.96% ± 0.08%</em></td>
+<td style="text-align: center;"><em>27.55% ± 0.00%</em></td>
+<td style="text-align: center;"><em>0.7622 ± 0.0002</em></td>
+<td style="text-align: center;"><em>0.7621 ± 0.0002</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><em>EvolveGCN-H</em></td>
+<td style="text-align: center;"><em>Setting B (Mixed)</em></td>
+<td style="text-align: center;"><em>40.93% ± 30.79%</em></td>
+<td style="text-align: center;"><em>±38.22%</em></td>
+<td style="text-align: center;"><em>62.76% ± 37.05%</em></td>
+<td style="text-align: center;"><em>35.74% ± 37.33%</em></td>
+<td style="text-align: center;"><em>0.7120 ± 0.2189</em></td>
+<td style="text-align: center;"><em>0.7152 ± 0.1888</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><em>Adamic-Adar (undirected)</em></td>
+<td style="text-align: center;"><em>Setting B (Mixed)</em></td>
+<td style="text-align: center;"><em>1.88% ± 0.00%</em></td>
+<td style="text-align: center;"><em>±0.00%</em></td>
+<td style="text-align: center;"><em>86.26% ± 8.19%</em></td>
+<td style="text-align: center;"><em>0.95% ± 0.00%</em></td>
+<td style="text-align: center;"><em>0.5604 ± 0.0057</em></td>
+<td style="text-align: center;"><em>0.5779 ± 0.0054</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><em>Jaccard Coefficient
+(undirected)</em></td>
+<td style="text-align: center;"><em>Setting B (Mixed)</em></td>
+<td style="text-align: center;"><em>0.00% ± 0.00%</em></td>
+<td style="text-align: center;"><em>±0.00%</em></td>
+<td style="text-align: center;"><em>0.00% ± 0.00%</em></td>
+<td style="text-align: center;"><em>0.00% ± 0.00%</em></td>
+<td style="text-align: center;"><em>0.4740 ± 0.0084</em></td>
+<td style="text-align: center;"><em>0.4397 ± 0.0030</em></td>
+</tr>
+</tbody>
+</table>
+<p>Figure 6 visualizes the model comparison under Setting A (Hard
+Historical Negatives).</p>
+<p><img src="../figures/fig06_benchmark_performance_setting_a.png"
+alt="Figure 6: Link Prediction Benchmark Performance under Setting A (Hard Historical Negatives)" /><br />
+<em>Figure 6: Benchmark performance under Setting A (Hard Historical
+Negatives) comparing F1-score (green), Precision (blue), and Recall
+(orange) across all eight evaluated models for (A) APEX-IDS2026 and (B)
+CIC-IDS2017.</em></p>
+<h3 id="the-negative-sampling-illusion">5.3 The Negative Sampling
+Illusion</h3>
+<p>Figure 7 demonstrates the stark contrast between Setting A (Hard
+Historical Negatives) and Setting B (Mixed Random Negatives) across all
+models. Under Setting B, memory heuristics achieve near-100% precision
+(<span class="math inline">\(99.95\% - 99.98\%\)</span>), creating an
+illusion of near-perfect temporal understanding. However, under Setting
+A, where negative candidates are sampled from expired historical
+communication links, precision collapses dramatically (<span
+class="math inline">\(47.02\%\)</span> on APEX and <span
+class="math inline">\(34.43\%\)</span> on CIC for unbounded memory).</p>
+<p><img src="../figures/fig07_benchmark_setting_comparison_full.png"
+alt="Figure 7: Comparative Analysis of Negative Sampling Regimes (Setting A vs. Setting B)" /><br />
+<em>Figure 7: Comparative analysis of negative sampling regimes
+demonstrating the negative sampling illusion: Precision (top row) and
+F1-Score (bottom row) contrasting Setting A (Hard Historical Negatives,
+red) versus Setting B (Mixed Random Negatives, blue) across five
+representative models on APEX-IDS2026 (left) and CIC-IDS2017
+(right).</em></p>
+<h3 id="evolvegcn-h-per-seed-performance-and-training-dynamics">5.4
+EvolveGCN-H Per-Seed Performance and Training Dynamics</h3>
+<p>Table 4 details the per-seed results for EvolveGCN-H, and Figure 8
+visualizes the per-seed performance variation.</p>
+<p><strong>Table 4: Per-seed evaluation of EvolveGCN-H on structural
+degree features.</strong><br />
+<em>All seeds share identical training data splits; within each seed
+run, all models are evaluated on identical candidate sets, while
+negative candidate draws vary across seeds.</em></p>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 12%" />
+<col style="width: 12%" />
+<col style="width: 12%" />
+<col style="width: 12%" />
+<col style="width: 12%" />
+<col style="width: 12%" />
+<col style="width: 12%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: left;">Dataset</th>
+<th style="text-align: center;">Seed</th>
+<th style="text-align: center;">Setting A: F1</th>
+<th style="text-align: center;">Setting A: Precision</th>
+<th style="text-align: center;">Setting A: Recall</th>
+<th style="text-align: center;">Setting B: F1</th>
+<th style="text-align: center;">Setting B: Precision</th>
+<th style="text-align: center;">Setting B: Recall</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>APEX-IDS2026</strong></td>
+<td style="text-align: center;">42</td>
+<td style="text-align: center;">52.24%</td>
+<td style="text-align: center;">43.72%</td>
+<td style="text-align: center;">65.15%</td>
+<td style="text-align: center;">67.96%</td>
+<td style="text-align: center;">72.19%</td>
+<td style="text-align: center;">65.15%</td>
+</tr>
+<tr>
+<td style="text-align: left;">APEX-IDS2026</td>
+<td style="text-align: center;">100</td>
+<td style="text-align: center;">53.57%</td>
+<td style="text-align: center;">44.66%</td>
+<td style="text-align: center;">67.04%</td>
+<td style="text-align: center;">66.74%</td>
+<td style="text-align: center;">66.63%</td>
+<td style="text-align: center;">67.04%</td>
+</tr>
+<tr>
+<td style="text-align: left;">APEX-IDS2026</td>
+<td style="text-align: center;">123</td>
+<td style="text-align: center;">66.67%</td>
+<td style="text-align: center;">50.00%</td>
+<td style="text-align: center;">100.00%</td>
+<td style="text-align: center;">66.67%</td>
+<td style="text-align: center;">50.00%</td>
+<td style="text-align: center;">100.00%</td>
+</tr>
+<tr>
+<td style="text-align: left;">APEX-IDS2026</td>
+<td style="text-align: center;">456</td>
+<td style="text-align: center;">0.00%</td>
+<td style="text-align: center;">0.00%</td>
+<td style="text-align: center;">0.00%</td>
+<td style="text-align: center;">0.00%</td>
+<td style="text-align: center;">0.00%</td>
+<td style="text-align: center;">0.00%</td>
+</tr>
+<tr>
+<td style="text-align: left;">APEX-IDS2026</td>
+<td style="text-align: center;">999</td>
+<td style="text-align: center;">59.30%</td>
+<td style="text-align: center;">54.99%</td>
+<td style="text-align: center;">64.59%</td>
+<td style="text-align: center;">66.32%</td>
+<td style="text-align: center;">68.55%</td>
+<td style="text-align: center;">64.59%</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>CIC-IDS2017</strong></td>
+<td style="text-align: center;">42</td>
+<td style="text-align: center;">80.55%</td>
+<td style="text-align: center;">67.85%</td>
+<td style="text-align: center;">99.10%</td>
+<td style="text-align: center;">86.46%</td>
+<td style="text-align: center;">76.67%</td>
+<td style="text-align: center;">99.10%</td>
+</tr>
+<tr>
+<td style="text-align: left;">CIC-IDS2017</td>
+<td style="text-align: center;">100</td>
+<td style="text-align: center;">0.00%</td>
+<td style="text-align: center;">0.00%</td>
+<td style="text-align: center;">0.00%</td>
+<td style="text-align: center;">0.00%</td>
+<td style="text-align: center;">0.00%</td>
+<td style="text-align: center;">0.00%</td>
+</tr>
+<tr>
+<td style="text-align: left;">CIC-IDS2017</td>
+<td style="text-align: center;">123</td>
+<td style="text-align: center;">32.89%</td>
+<td style="text-align: center;">35.28%</td>
+<td style="text-align: center;">30.80%</td>
+<td style="text-align: center;">43.58%</td>
+<td style="text-align: center;">74.49%</td>
+<td style="text-align: center;">30.80%</td>
+</tr>
+<tr>
+<td style="text-align: left;">CIC-IDS2017</td>
+<td style="text-align: center;">456</td>
+<td style="text-align: center;">35.17%</td>
+<td style="text-align: center;">60.17%</td>
+<td style="text-align: center;">24.85%</td>
+<td style="text-align: center;">39.62%</td>
+<td style="text-align: center;">97.64%</td>
+<td style="text-align: center;">24.85%</td>
+</tr>
+<tr>
+<td style="text-align: left;">CIC-IDS2017</td>
+<td style="text-align: center;">999</td>
+<td style="text-align: center;">34.52%</td>
+<td style="text-align: center;">61.81%</td>
+<td style="text-align: center;">23.95%</td>
+<td style="text-align: center;">35.00%</td>
+<td style="text-align: center;">64.99%</td>
+<td style="text-align: center;">23.95%</td>
+</tr>
+</tbody>
+</table>
+<p><img src="../figures/fig08_per_seed_evolvegcn_diagnostics.png"
+alt="Figure 8: Per-Seed Training Dynamics and Collapse Modes of EvolveGCN-H" /><br />
+<em>Figure 8: Per-seed evaluation of EvolveGCN-H across five random
+seeds (<code>[42, 100, 123, 456, 999]</code>) on (A) APEX-IDS2026 and
+(B) CIC-IDS2017 under Setting A (red) and Setting B (blue). The plot
+highlights the high variance and degenerate collapse modes (e.g.,
+complete collapse to 0% F1 for APEX seed 456 and CIC seed 100, and drift
+to all-positive predictions for APEX seed 123).</em></p>
+<h4
+id="investigation-of-training-dynamics-and-optimization-instability">Investigation
+of Training Dynamics and Optimization Instability</h4>
+<p>Exploratory training instrumentation of PyTorch parameter gradients,
+internal weight norms, and intermediate output logits across all five
+seeds provides insight into the optimization dynamics of the adapted
+EvolveGCN-H variant. We disclose that while final test metrics and
+degenerate predictions are recorded in released summary artifacts,
+step-wise gradient norm trajectories and extreme pre-sigmoid logit
+histories were observed during diagnostic training runs rather than
+persisted as standalone benchmark log files: 1. <strong>Measured
+Gradient Norms in the MLP Predictor Head (Diagnostic
+Observation):</strong> In exploratory training instrumentation at
+initialization and throughout early optimization steps, exceptionally
+large gradient norms were observed on the link prediction MLP head
+(<code>predictor[0].weight</code>) and recurrent GRU weights. The
+baseline implementation operates without gradient clipping
+(<code>torch.nn.utils.clip_grad_norm_</code>) or normalization layers,
+allowing unconstrained parameter step updates. 2. <strong>Logit
+Saturation and Degenerate Predictions (Diagnostic &amp;
+Recorded):</strong> During optimization, pre-sigmoid output logits
+diverged into saturated numerical regimes. In benchmark result artifacts
+(<code>results/metrics/benchmark_five_seed_results.json</code>), the
+practical impact of this saturation is directly demonstrated in the
+recorded test predictions: seed 123 drifts into extreme positive logits
+(<span class="math inline">\(\hat{y} &gt; +15.0\)</span>), predicting
+active links for all candidate pairs and yielding exactly <span
+class="math inline">\(50.0\%\)</span> precision, <span
+class="math inline">\(100.0\%\)</span> recall, and an F1 of <span
+class="math inline">\(66.67\%\)</span>. Conversely, seed 456 collapses
+into negative logits (<span class="math inline">\(\hat{y} &lt;
+-15.0\)</span>), producing zero positive predictions and <span
+class="math inline">\(0.0\%\)</span> F1. On CIC-IDS2017, seed 100
+collapses into negative logits (<span
+class="math inline">\(0.0\%\)</span> F1), while seed 42 achieves <span
+class="math inline">\(99.10\%\)</span> recall (<span
+class="math inline">\(80.55\%\)</span> F1 under Setting A). 3.
+<strong>Distinguishing Direct Observation from Causal
+Hypotheses:</strong> Although large initial gradient norms and extreme
+logit saturation were observed during training, establishing a
+definitive causal link would require controlled ablation experiments
+(e.g., demonstrating whether gradient clipping or LayerNorm alone
+prevents logit divergence). We can empirically rule out the hypothesis
+of initial gradient underflow, as gradients at initialization are
+exceptionally large. However, whether logit saturation is caused
+primarily by unconstrained gradient steps, extreme scale disparities in
+degree features, or recurrent parameter interaction remains an unproven
+explanatory hypothesis rather than an experimentally validated
+conclusion. Furthermore, in IEEE 754 single-precision (float32)
+arithmetic, the mathematical derivative of the sigmoid function <span
+class="math inline">\(\sigma&#39;(z) = \sigma(z)(1 - \sigma(z))\)</span>
+evaluates to exactly <span class="math inline">\(0.0\)</span> once <span
+class="math inline">\(|z| \ge 16.64\)</span> (since <span
+class="math inline">\(e^{-16.64} &lt; 2^{-24}\)</span>, causing <span
+class="math inline">\(\sigma(z)\)</span> to round to <span
+class="math inline">\(1.0f\)</span> and <span class="math inline">\(1 -
+\sigma(z)\)</span> to evaluate to <span
+class="math inline">\(0.0f\)</span>). In <code>BCEWithLogitsLoss</code>,
+the loss gradient with respect to logit <span
+class="math inline">\(z\)</span> is <span
+class="math inline">\(\frac{\partial \mathcal{L}}{\partial z} =
+\sigma(z) - y\)</span>, which evaluates to exactly <span
+class="math inline">\(0.0\)</span> for correctly predicted saturated
+examples (<span class="math inline">\(y=1, z \ge 16.64\)</span> or <span
+class="math inline">\(y=0, z \le -16.64\)</span>). For incorrectly
+classified saturated examples, the logit gradient is <span
+class="math inline">\(\pm 1.0\)</span>, but downstream weight gradients
+depend on backpropagation through intermediate layers and recurrent
+weights. At test evaluation time, computing link probabilities via
+<code>torch.sigmoid(logits)</code> maps any logit <span
+class="math inline">\(|z| \ge 16.64\)</span> to identically <span
+class="math inline">\(0.0f\)</span> or <span
+class="math inline">\(1.0f\)</span>, collapsing continuous ranking
+capacity. Crucially, this finite-precision saturation is a mathematical
+property of the float32 representation in the saturated regime once
+extreme logits have emerged, rather than an independently demonstrated
+root cause of the initial optimization instability. We report these
+dynamics as empirical boundaries of the adapted EvolveGCN-H variant on
+raw dynamic network topologies. 4. <strong>Audit of Training Diagnostics
+and Absence of Persisted Loss Logs:</strong> In accordance with research
+integrity standards, we disclose that while final test metrics,
+continuous predictions, and degenerate predictions are archived in
+repository artifacts (<code>results/apex_ids2026/predictions/</code> and
+<code>results/metrics/benchmark_five_seed_results.json</code>),
+per-epoch training loss, validation loss, and step-wise gradient norm
+histories were recorded during exploratory diagnostic sessions rather
+than saved as permanent benchmark log files; model checkpoints contain
+exclusively raw parameter state dictionaries
+(<code>torch.nn.modules.container.Sequential</code>,
+<code>OrderedDict</code> of tensor weights and biases). Consequently,
+continuous training loss curves cannot be reconstructed from the
+available artifacts, and we adhere to research integrity standards by
+reporting this limitation transparently rather than simulating or
+fabricating unrecorded optimization histories.</p>
+<hr />
+<h2 id="discussion-scientific-insights">6. Discussion &amp; Scientific
+Insights</h2>
+<h3
+id="evaluating-topological-dynamics-and-assessing-the-stasis-assumption-in-cic-ids2017">6.1
+Evaluating Topological Dynamics and Assessing the Stasis Assumption in
+CIC-IDS2017</h3>
+<p>Prior literature and earlier preliminary audits hypothesized that
+CIC-IDS2017’s low baseline link prediction performance was attributable
+to topological stasis. Our multi-scale analysis counters this hypothesis
+for the evaluated capture: <strong>CIC-IDS2017 exhibits higher edge
+novelty (68.09% daily) and higher turnover (81.61% Jaccard) than the
+44-day enterprise APEX-IDS2026 stream (56.25% novelty, 72.71%
+turnover)</strong>. The low performance of historical memory heuristics
+on CIC-IDS2017 is empirically associated with rapid endpoint turnover
+and transient flow bursts over a brief five-day capture, which severely
+limits the historical context available to memory models, rather than
+proving a definitive causal explanation for GNN optimization
+behavior.</p>
+<h3 id="the-memory-failure-mechanism-of-unbounded-edgebank">6.2 The
+Memory Failure Mechanism of Unbounded EdgeBank</h3>
+<p>Under Setting B (mixed random negatives), binary memory baselines
+achieve high precision (<span class="math inline">\(99.95\%\)</span> for
+EdgeBank-∞ and <span class="math inline">\(99.98\%\)</span> for
+Persistence on APEX; <span class="math inline">\(99.87\%\)</span> and
+<span class="math inline">\(99.93\%\)</span> on CIC) and high F1 (<span
+class="math inline">\(94.01\%\)</span> and <span
+class="math inline">\(66.46\%\)</span> on APEX; <span
+class="math inline">\(68.82\%\)</span> and <span
+class="math inline">\(43.31\%\)</span> on CIC). However, under Setting A
+(hard historical negatives), EdgeBank-∞ precision collapses to
+<strong>47.02% on APEX and 34.43% on CIC</strong>—falling below 50%
+precision on the balanced 1:1 candidate benchmark.</p>
+<p>This failure follows directly from candidate sampling and prediction
+logic, as illustrated in Figure 9: in
+<code>sample_hard_historical_negatives</code>, hard negatives are
+sampled strictly from historically active channels that became inactive
+(<span class="math inline">\(E_{\le t} \setminus E_{t+1}\)</span>).
+Because <code>EdgeBankUnlimited</code> retains all historical edges
+without decay (<span class="math inline">\(\hat{y} = 1 \iff (u, v) \in
+E_{\le t}\)</span>), it scores 100% of sampled hard negatives as
+positive (<span class="math inline">\(1.0\)</span>). Consequently, every
+sampled hard negative becomes a false positive (<span
+class="math inline">\(FP = |E_{\text{neg}}^{\text{hard}}|\)</span>,
+yielding zero specificity and zero true negatives, <span
+class="math inline">\(TN=0\)</span>).</p>
+<p>On the CIC-IDS2017 Day 4 test transition, exactly <span
+class="math inline">\(K = 2,000\)</span> positive candidates are
+evaluated (of which exactly 1,050 were previously observed in Days 0–2
+training/validation telemetry, yielding <span class="math inline">\(TP =
+1,050\)</span> and <span class="math inline">\(FN = 950\)</span>)
+alongside <span class="math inline">\(K = 2,000\)</span> sampled hard
+negatives. Because EdgeBank-∞ predicts positive for all historical
+edges, <span class="math inline">\(FP = 2,000\)</span> identically for
+every seed regardless of which specific inactive edges are sampled. This
+produces an identical per-seed precision of <span
+class="math inline">\(TP / (TP + FP) = 1050 / (1050 + 2000) =
+34.43\%\)</span> (<span class="math inline">\(\pm 0.00\%\)</span> std
+across all five seeds). Similarly, on APEX-IDS2026 across 12 test
+transitions, all <span class="math inline">\(24,000\)</span> sampled
+hard negatives become false positives (<span
+class="math inline">\(FP=2,000\)</span> per transition, <span
+class="math inline">\(TN=0\)</span>), yielding a per-seed mean precision
+of <span class="math inline">\(47.02\% \pm 0.00\%\)</span>. This
+demonstrates that unconstrained memory retention becomes actively
+counterproductive under hard link-extinction conditions.</p>
+<p><img src="../figures/fig09_memory_failure_confusion_matrices.png"
+alt="Figure 9: Confusion Matrix Composition of Memory Baselines across Evaluation Settings" /><br />
+<em>Figure 9: Confusion matrix composition (True Positives, False
+Positives, True Negatives, False Negatives) for Persistence, EdgeBank-∞
+(binary), and EdgeBank-tw (<span class="math inline">\(W=2\)</span>) on
+CIC-IDS2017. (A) Under Setting A (Hard Historical Negatives), EdgeBank-∞
+yields zero True Negatives (<span class="math inline">\(TN=0,
+FP=2000\)</span>), causing precision to collapse to 34.43%. (B) Under
+Setting B (Mixed Random Negatives), random non-edges are easily
+recognized as absent from history, creating near-zero False Positives
+(<span class="math inline">\(FP \le 3\)</span>) and an illusion of
+near-100% precision.</em></p>
+<h3 id="sliding-window-memory-as-the-optimal-enterprise-baseline">6.3
+Sliding-Window Memory as the Optimal Enterprise Baseline</h3>
+<p>On continuous enterprise telemetry (APEX-IDS2026),
+<code>EdgeBank-tw(W=2)</code> achieves the highest overall performance
+under Setting A (<strong><span class="math inline">\(69.78\% \pm
+0.08\%\)</span> F1</strong>, <span
+class="math inline">\(85.04\%\)</span> precision, <span
+class="math inline">\(60.01\%\)</span> recall), outperforming both
+Persistence (<span class="math inline">\(64.09\%\)</span> F1) and
+EdgeBank-∞ (<span class="math inline">\(61.47\%\)</span> F1). A finite
+memory window provides the necessary forgetting mechanism to balance
+channel recurrence against extinction.</p>
+<h3 id="topological-proximity-signals-in-high-churn-regimes">6.4
+Topological Proximity Signals in High-Churn Regimes</h3>
+<p>On CIC-IDS2017 under Setting A, <strong>Common Neighbors achieves the
+highest F1 (<span class="math inline">\(45.24\% \pm 0.24\%\)</span>) and
+precision (<span class="math inline">\(62.97\% \pm 0.91\%\)</span>),
+outperforming Persistence (<span class="math inline">\(35.22\%\)</span>
+F1, <span class="math inline">\(48.50\%\)</span> precision)</strong>.
+When temporal memory is impaired by high edge novelty, structural
+triadic proximity in the current snapshot provides a stronger predictive
+signal than past snapshot state.</p>
+<h3 id="empirical-audit-of-topology-whitelisting-anomaly-detection">6.5
+Empirical Audit of Topology Whitelisting &amp; Anomaly Detection</h3>
+<p>Prior preliminary drafts of graph-based intrusion frameworks posited
+that “topology grammar” or structural whitelisting could effectively
+isolate legitimate network behavior from anomalies by extracting
+permissible edges from benign snapshots. However, empirical evaluation
+on actual telemetry directly refutes this premise.</p>
+<p>As shown in Figure 10, when a static structural whitelist extracted
+from benign training intervals was evaluated against subsequent test
+telemetry on CIC-IDS2017
+(<code>results/metrics/cic_ids_grammar_real.csv</code>), exactly
+<strong>93 legitimate transitions were accepted while 983 legitimate
+transitions were rejected as “anomalies”</strong>—representing an
+overwhelming <strong>91.4% false-positive rejection rate on benign
+traffic</strong>, while 0 malicious transitions were observed or
+evaluated. Because normal network telemetry exhibits high daily edge
+novelty (<span class="math inline">\(68.09\%\)</span> on CIC-IDS2017 and
+<span class="math inline">\(56.25\%\)</span> on APEX-IDS2026), benign
+host communications continually form novel endpoint connections. Rigid
+topological whitelists inevitably suffer from catastrophic false-alarm
+rates, confirming Axelsson’s base-rate fallacy (2000) in structural
+dynamic network domains.</p>
+<p><img src="../figures/fig10_topology_whitelist_failure_audit.png"
+alt="Figure 10: Empirical Evaluation of Topology Whitelist / Grammar Rejection on CIC-IDS2017" /><br />
+<em>Figure 10: Empirical evaluation of static topological whitelisting
+(“grammar evolution”) on CIC-IDS2017. Due to high edge novelty, 983 of
+1,076 legitimate edges (91.4%) are falsely rejected as anomalies,
+demonstrating the fundamental failure mode of static whitelisting in
+high-churn network environments.</em></p>
+<h3
+id="resolving-threshold-specific-artifacts-vs.-continuous-ranking-capacity">6.6
+Resolving Threshold-Specific Artifacts vs. Continuous Ranking
+Capacity</h3>
+<p>A critical methodological finding of this benchmark is the risk of
+conflating thresholded binary metrics with underlying predictive ranking
+capacity. As visualized in Figure 11, imposing a default decision
+threshold of <span class="math inline">\(\tau = 1.0\)</span> (standard
+for count-based heuristics) on the Jaccard Coefficient classifies 100%
+of candidate pairs as negative, producing an apparent <span
+class="math inline">\(0.0\%\)</span> F1. However, threshold-free
+continuous evaluation reveals that Jaccard achieves a competitive
+ROC-AUC of <strong><span class="math inline">\(0.5856 \pm
+0.0052\)</span></strong> and Average Precision of <strong><span
+class="math inline">\(0.5583 \pm 0.0073\)</span></strong> under
+CIC-IDS2017 Setting A. Benchmarks must report threshold-free ranking
+metrics (ROC-AUC and Average Precision) alongside calibrated operational
+decision thresholds to avoid misdiagnosing continuous model capability
+as complete predictive failure.</p>
+<p><img src="../figures/fig11_continuous_vs_thresholded_heuristics.png"
+alt="Figure 11: Continuous Ranking Capacity vs. Threshold-Specific Artifacts in Heuristic Baselines" /><br />
+<em>Figure 11: Contrast between fixed-threshold F1-score (<span
+class="math inline">\(\tau=1.0\)</span>, red) and continuous
+threshold-free ranking metrics (ROC-AUC in blue, Average Precision in
+green) for Common Neighbors, Adamic-Adar, and Jaccard Coefficient on
+CIC-IDS2017 Setting A. The plot demonstrates that Jaccard’s 0% F1 is
+strictly a threshold-induced artifact.</em></p>
+<h3
+id="continuous-discrimination-and-precision-recall-dynamics-under-enterprise-scale">6.7
+Continuous Discrimination and Precision-Recall Dynamics under Enterprise
+Scale</h3>
+<p>Evaluating continuous prediction probabilities independently of fixed
+operational cutoffs isolates model discriminative capacity. On the
+continuous enterprise test partition of APEX-IDS2026 (N = 3,256,518
+candidate pairs per seed, evaluated under uniform negative candidate
+draws), EvolveGCN-H demonstrates strong continuous ranking performance,
+as visualized in Figure 12. Across three random seeds
+(<code>[42, 100, 1234]</code>), EvolveGCN-H achieves a mean ROC-AUC of
+<strong><span class="math inline">\(0.9705 \pm 0.0035\)</span></strong>
+(Seed 42: <span class="math inline">\(0.9745\)</span>; Seed 100: <span
+class="math inline">\(0.9687\)</span>; Seed 1234: <span
+class="math inline">\(0.9682\)</span>) and a mean Average Precision
+(PR-AUC) of <strong><span class="math inline">\(0.9716 \pm
+0.0028\)</span></strong> (Seed 42: <span
+class="math inline">\(0.9748\)</span>; Seed 100: <span
+class="math inline">\(0.9701\)</span>; Seed 1234: <span
+class="math inline">\(0.9699\)</span>). In contrast, the Persistence
+baseline produces a step-function ROC curve with an AUC of <strong><span
+class="math inline">\(0.8130\)</span></strong> and Average Precision of
+<strong><span class="math inline">\(0.8129\)</span></strong>.</p>
+<p><strong>Stratified Performance Breakdown (Recurring vs. New
+Edges):</strong> To inspect the origin of this performance disparity, we
+stratify positive test candidates (<span
+class="math inline">\(1,628,259\)</span> edges across 12 test
+transitions) into recurring and novel edge formations: * <em>Recurring
+Active Edges (<span class="math inline">\(E_{t+1}^{\text{rec}} = E_t
+\cap E_{t+1}\)</span>):</em> Account for <span
+class="math inline">\(1,019,361\)</span> edges (<span
+class="math inline">\(62.60\%\)</span>). On this stratum, Persistence
+achieves a perfect <span class="math inline">\(100.0\%\)</span> recall
+(<span class="math inline">\(1,019,361 / 1,019,361\)</span>), while
+EvolveGCN-H achieves <span class="math inline">\(94.37\% \pm
+0.99\%\)</span> recall (<span class="math inline">\(962,019\)</span>
+detected on Seed 42). * <em>New Edges between Active Known Nodes (<span
+class="math inline">\(E_{t+1}^{\text{active}} \subseteq V_t \times V_t
+\setminus E_t\)</span>):</em> Account for <span
+class="math inline">\(608,898\)</span> edges (<span
+class="math inline">\(37.40\%\)</span>). On this stratum, Persistence
+achieves exactly <span class="math inline">\(0.0\%\)</span> recall
+(<span class="math inline">\(0 / 608,898\)</span>), structurally failing
+on every newly emerging channel. In contrast, EvolveGCN-H achieves <span
+class="math inline">\(85.90\%\)</span> recall on Seed 42 (<span
+class="math inline">\(522,992\)</span> detected), and an overall
+three-seed mean recall of <span class="math inline">\(81.12\% \pm
+2.82\%\)</span>.</p>
+<p>This breakdown explains why EvolveGCN-H achieves an overall
+continuous ROC-AUC of <span class="math inline">\(0.9705\)</span>: it
+successfully ranks newly emerging edges between active endpoints above
+random non-edges, an inductive capability fundamentally inaccessible to
+static persistence heuristics.</p>
+<p><img src="../figures/fig12_roc_and_pr_curves_apex.png"
+alt="Figure 12: Continuous ROC and Precision-Recall Curves for EvolveGCN-H and Persistence" /><br />
+<em>Figure 12: Continuous performance evaluation on the held-out
+APEX-IDS2026 test partition (N = 3,256,518 candidate pairs per seed).
+(A) Receiver Operating Characteristic (ROC) curves comparing EvolveGCN-H
+across three random seeds (Seed 42: AUC = 0.9745; Seed 100: AUC =
+0.9687; Seed 1234: AUC = 0.9682; Mean: AUC = <span
+class="math inline">\(0.9705 \pm 0.0035\)</span>), Persistence baseline
+(step curve, AUC = 0.8130), and random chance (AUC = 0.5000). (B)
+Precision-Recall (PR) curves showing Recall vs. Precision for
+EvolveGCN-H (Seed 42: AP = 0.9748; Seed 100: AP = 0.9701; Seed 1234: AP
+= 0.9699; Mean: AP = <span class="math inline">\(0.9716 \pm
+0.0028\)</span>), Persistence (AP = 0.8129), and balanced chance base
+rate (P = 0.5000).</em></p>
+<h3
+id="empirical-confusion-matrix-profiles-across-models-and-sampling-regimes">6.8
+Empirical Confusion Matrix Profiles across Models and Sampling
+Regimes</h3>
+<p>To inspect the operational impact of candidate sampling regimes on
+classification errors, Figure 13 illustrates 2x2 empirical confusion
+matrices with exact sample counts and class-conditional percentages
+across models and datasets: * <strong>APEX-IDS2026 Enterprise Telemetry
+(Panels A &amp; B):</strong> On the held-out test partition (<span
+class="math inline">\(N = 3,256,518\)</span>), EvolveGCN-H (Seed 42)
+achieves <span class="math inline">\(TP = 1,485,011\)</span> (<span
+class="math inline">\(91.2\%\)</span> recall on active links) and <span
+class="math inline">\(TN = 1,522,179\)</span> (<span
+class="math inline">\(93.5\%\)</span> specificity on inactive pairs),
+with <span class="math inline">\(FP = 106,080\)</span> (<span
+class="math inline">\(6.5\%\)</span> false positive rate) and <span
+class="math inline">\(FN = 143,248\)</span>, yielding <span
+class="math inline">\(93.33\%\)</span> precision and <span
+class="math inline">\(92.26\%\)</span> F1. Conversely, the Persistence
+baseline achieves near-zero false positives (<span
+class="math inline">\(FP = 168\)</span>, <span
+class="math inline">\(0.01\%\)</span> error on inactive pairs; <span
+class="math inline">\(99.98\%\)</span> precision), but suffers <span
+class="math inline">\(FN = 608,898\)</span> (<span
+class="math inline">\(37.4\%\)</span> false negative rate), missing over
+600,000 active communication links due to enterprise edge novelty. *
+<strong>CIC-IDS2017 Day 4 Transition (Panels C &amp; D):</strong> On the
+balanced test transition (<span class="math inline">\(N =
+4,000\)</span>), EvolveGCN-H (Seed 42) detects <span
+class="math inline">\(TP = 1,982\)</span> active links (<span
+class="math inline">\(99.1\%\)</span> recall) with only <span
+class="math inline">\(FN = 18\)</span>. However, under Setting A (Hard
+Historical Negatives), inactive channels that were previously active in
+Days 0–2 produce <span class="math inline">\(FP = 939\)</span> (<span
+class="math inline">\(46.9\%\)</span> error on inactive pairs),
+degrading precision to <span class="math inline">\(67.85\%\)</span>.
+Under Setting B (Mixed Random Negatives), random non-edges are more
+readily separated (<span class="math inline">\(FP = 603\)</span>, <span
+class="math inline">\(30.1\%\)</span> false positive rate), elevating
+precision to <span class="math inline">\(76.67\%\)</span> (<span
+class="math inline">\(86.46\%\)</span> F1). This verifies that negative
+sampling choice directly alters the observed false-alarm profile of
+graph learning architectures.</p>
+<p><img src="../figures/fig13_classification_confusion_matrices.png"
+alt="Figure 13: Empirical Classification Confusion Matrices across Models and Sampling Regimes" /><br />
+<em>Figure 13: Empirical confusion matrix heatmaps showing raw candidate
+counts and row-normalized percentages across models and negative
+sampling regimes. (A) APEX-IDS2026: EvolveGCN-H on the test partition
+(Seed 42, N = 3,256,518 pairs; TN = 1,522,179 [93.5% of Inactive], FP =
+106,080 [6.5%], FN = 143,248 [8.8% of Active], TP = 1,485,011 [91.2%];
+Precision = 93.33%, Recall = 91.20%, F1 = 92.26%). (B) APEX-IDS2026:
+Persistence baseline (Seed 42, N = 3,256,518 pairs; TN = 1,628,091
+[99.99%], FP = 168 [0.01%], FN = 608,898 [37.4%], TP = 1,019,361
+[62.6%]; Precision = 99.98%, Recall = 62.60%, F1 = 77.00%). (C)
+CIC-IDS2017: EvolveGCN-H under Setting A (Hard Historical Negatives, Day
+4 transition, Seed 42, N = 4,000 pairs; TN = 1,061 [53.1%], FP = 939
+[46.9%], FN = 18 [0.9%], TP = 1,982 [99.1%]; Precision = 67.85%, Recall
+= 99.10%, F1 = 80.55%). (D) CIC-IDS2017: EvolveGCN-H under Setting B
+(Mixed Random Negatives, Day 4 transition, Seed 42, N = 4,000 pairs; TN
+= 1,397 [69.9%], FP = 603 [30.1%], FN = 18 [0.9%], TP = 1,982 [99.1%];
+Precision = 76.67%, Recall = 99.10%, F1 = 86.46%).</em></p>
+<hr />
+<h2 id="limitations-and-threats-to-validity">7. Limitations and Threats
+to Validity</h2>
+<ol type="1">
+<li><strong>Restricted Empirical Scope:</strong> Our findings are
+strictly restricted to the evaluated telemetry streams (APEX-IDS2026, 44
+days; CIC-IDS2017, 5 days) under the specified snapshot and candidate
+generation protocol. They do not constitute universal claims regarding
+all enterprise networks or intrusion detection datasets.</li>
+<li><strong>Single-Transition Test Split on CIC-IDS2017:</strong> Due to
+the 5-day duration of CIC-IDS2017 and the requirement for chronological
+train/validation/test ordering (Monday–Wednesday train, Thursday
+validation), the test split contains exactly <strong>one daily
+transition</strong> (Thursday to Friday). While sub-daily windowing
+partially mitigates this, CIC test evaluations inherently represent a
+single calendar day.</li>
+<li><strong>Statistical Interpretation of Seeds:</strong> The five
+random seeds (<code>[42, 100, 123, 456, 999]</code>) measure algorithmic
+initialization and candidate-sampling variability within the fixed
+temporal partitions. They do <strong>not</strong> represent independent
+temporal test periods, nor do they establish general temporal invariance
+across unobserved timeframes or seasonal network shifts. Following our
+candidate generation overhaul with stable lexicographical sorting of
+candidate pools and known nodes, candidate generation is 100%
+deterministic and bit-for-bit reproducible across separate Python
+processes regardless of <code>PYTHONHASHSEED</code>, as verified in unit
+regression tests.</li>
+<li><strong>Base-Rate Fallacy in Deployment:</strong> In operational
+networks, the ratio of active edges to potential non-edges is on the
+order of <span class="math inline">\(1 : 10^5\)</span> or greater. The
+balanced 1:1 candidate ratio evaluated here serves as a controlled
+comparative benchmark; operational precision in an uncurated deployment
+would be substantially lower due to extreme class imbalance, and
+balanced ROC-AUC/Average Precision values cannot be directly
+extrapolated to operational detection efficacy.</li>
+<li><strong>Absence of Flow Semantic Attributes in GNN:</strong>
+EvolveGCN-H was evaluated strictly on structural degree features to
+isolate topological learning. Integrating rich flow attributes (bytes,
+packets, flags, duration) into dynamic GNN edges remains necessary to
+determine whether neural models can surpass heuristic baselines.</li>
+<li><strong>Unverifiable Operational Claims in Dataset
+Provenance:</strong> While cryptographic checksums (MD5 against the
+Zenodo deposit record; SHA-256) confirm local archive file integrity,
+and the 69.1M flow count and anonymized graph topology are directly
+computed from the extracted files, operational infrastructure claims
+(such as live MikroTik router collection on ISP infrastructure, 13,638
+unique attacker IPs across 60 countries, and a claimed 0% false-positive
+rate for honeypot ground truth) represent third-party <em>dataset
+assertions</em> that cannot be independently audited because raw PCAP
+traces and cleartext IPs are unavailable.</li>
+<li><strong>Model Architecture Scope and Omission of Continuous-Time
+Models:</strong> We evaluate an adapted EvolveGCN-H variant (global mean
+pooling with vectorized GRU parameter evolution) rather than canonical
+top-<span class="math inline">\(k\)</span> node-selection EvolveGCN-H.
+Conclusions regarding recurrent parameter evolution apply to this
+specific implementation. Continuous-time dynamic models (TGN, DyRep) and
+attention-based snapshot architectures (DySAT) were omitted because they
+require microsecond-level continuous edge event queues or fine-grained
+temporal self-attention over node histories. In our telemetry setting,
+network telemetry is aggregated into discrete chronological snapshots
+(24h, 12h, 6h, 1h) to scale to tens of millions of network flows across
+enterprise networks. Implementing TGN or DySAT on graphs with <span
+class="math inline">\(&gt;400,000\)</span> nodes requires streaming edge
+queues and GPU memory that exceed typical batch graph constraints; we
+document this omission clearly as an architectural boundary of discrete
+snapshot benchmarks.</li>
+<li><strong>Candidate-Universe Asymmetry and Stratification
+Limitations:</strong> In the controlled 5-seed benchmark, positive
+candidate sets are evaluated jointly as <span
+class="math inline">\(E_{t+1}^{\text{eval}}\)</span> (<span
+class="math inline">\(1:1\)</span> balanced with negative candidate
+sets). Stratified analysis reveals that on APEX, recurring edges
+comprise <span class="math inline">\(62.60\%\)</span> of positive edges
+in the uncapped test partition, while new edges between active known
+nodes comprise <span class="math inline">\(37.40\%\)</span>.
+Furthermore, Setting B samples negatives strictly from <span
+class="math inline">\(V_t \times V_t\)</span> while positive candidates
+include a <span class="math inline">\(\approx 18-21\%\)</span> minority
+of re-emerging historical nodes (<span class="math inline">\(V_{&lt;t}
+\setminus V_t\)</span>); negative candidates in Setting B therefore
+never contain dormant historical endpoints. Metrics across Setting A and
+Setting B reflect different candidate universes and are not directly
+comparable. We state this candidate-universe asymmetry as an explicit
+methodological limitation rather than claiming unseen-node or
+candidate-universe concerns are fully resolved.</li>
+</ol>
+<hr />
+<h2 id="conclusion-and-future-work">8. Conclusion and Future Work</h2>
+<p>Temporal link prediction in network security is highly sensitive to
+negative candidate sampling regimes and underlying topological churn.
+Random negative sampling flatters persistence and memorization baselines
+by masking link-extinction failures, whereas hard historical negatives
+reveal substantial precision degradation. Across continuous enterprise
+telemetry (APEX-IDS2026) and laboratory cyber-range data (CIC-IDS2017),
+sliding-window memory (EdgeBank-tw) and Common Neighbors heuristics
+provide robust, competitive baselines that outperform both unbounded
+memory and adapted recurrent GCN variants. On CIC-IDS2017, five seeds
+measure algorithmic and candidate-sampling variability across a single
+chronological test transition rather than independent temporal periods;
+conclusions should not be extrapolated to unobserved timeframes or
+long-term operational networks without multi-month continuous
+evaluation. Rigorous dynamic network security evaluations must enforce
+chronological candidate stratification, report hard historical
+negatives, evaluate threshold-free continuous metrics alongside
+thresholded decisions, and transparently acknowledge optimization
+boundaries.</p>
+<p>Future work will expand this benchmark in three directions: (1)
+evaluating continuous-time dynamic graph neural networks (e.g., TGN,
+DyGFormer) that update node representations on individual edge arrivals;
+(2) incorporating semantic flow-level attributes (packet lengths,
+inter-arrival times, protocol flags) alongside structural degree
+encodings to assess multi-modal dynamic representation learning; and (3)
+formalizing matched-universe negative sampling protocols that evaluate
+candidate non-edges drawn across identical historical universes to
+further isolate the impact of dormant host re-emergence.</p>
+<hr />
+<h2 id="credit-authorship-contribution-statement">CRediT Authorship
+Contribution Statement</h2>
+<ul>
+<li><strong>Dheeraj Kovoord:</strong> Conceptualization, Methodology,
+Software, Formal Analysis, Investigation, Data Curation, Writing –
+Original Draft, Writing – Review &amp; Editing, Visualization, Project
+Administration.</li>
+<li><strong>Research Team:</strong> Supervision, Validation,
+Resources.</li>
+</ul>
+<hr />
+<h2 id="declaration-of-competing-interest">Declaration of Competing
+Interest</h2>
+<p>The authors declare that they have no known competing financial
+interests or personal relationships that could have appeared to
+influence the work reported in this paper.</p>
+<hr />
+<h2 id="acknowledgements-funding">Acknowledgements &amp; Funding</h2>
+<p>The authors express their gratitude to the Canadian Institute for
+Cybersecurity for public distribution of the CIC-IDS2017 cyber-range
+dataset, and to the creators of the APEX-IDS2026 benchmark dataset
+deposited on Zenodo. This research did not receive any specific grant
+from funding agencies in the public, commercial, or not-for-profit
+sectors.</p>
+<hr />
+<h2 id="data-and-code-availability-statement">Data and Code Availability
+Statement</h2>
+<ul>
+<li><strong>CIC-IDS2017:</strong> Publicly distributed by the Canadian
+Institute for Cybersecurity, University of New Brunswick
+(https://www.unb.ca/cic/datasets/ids-2017.html).</li>
+<li><strong>APEX-IDS2026:</strong> Distributed on Zenodo under the
+Creative Commons Attribution 4.0 International (CC BY 4.0) license (DOI:
+<code>10.5281/zenodo.22013914</code>, Archive MD5:
+<code>115ed72bb8759d3ce90fe17c52a0ee98</code>, Parquet SHA-256:
+<code>7e7855964ddc8061804fa48acfd6c2a3e1891462466654f9294cdab58744730c</code>,
+URL: https://doi.org/10.5281/zenodo.22013914).</li>
+<li><strong>Code and Benchmark Metrics:</strong> Complete evaluation
+scripts, baseline implementations, candidate samplers, and structured
+CSV/JSON results are available within the project repository under an
+open-source license.</li>
+</ul>
+<hr />
+<h2 id="references">References</h2>
+<ol type="1">
+<li>Arp, D., Quiring, E., Pendlebury, F., Warnecke, A., Pierazzi, F.,
+Dos Santos, R., Cavallaro, L., &amp; Rieck, K. (2022). Dos and don’ts of
+machine learning in computer security. <em>Proceedings of the 31st
+USENIX Security Symposium</em>, 3971–3988.</li>
+<li>Axelsson, S. (2000). The base-rate fallacy and the difficulty of
+intrusion detection. <em>ACM Transactions on Information and System
+Security (TISSEC)</em>, 3(3), 186–205.</li>
+<li>Bilot, T., El Madhoun, N., Al Agha, K., &amp; Zouaoui, A. (2023).
+Graph neural networks for intrusion detection: A survey. <em>IEEE
+Access</em>, 11, 49114–49139.</li>
+<li>Engelen, G., Rimmer, V., &amp; Joosen, W. (2021). Troubleshooting an
+unintended cheat: Bandwidth and public IP features in the CIC-IDS-2017
+dataset. In <em>Proceedings of the 2021 ACM Workshop on Cyber Threat
+Intelligence and Information Sharing (CyTII ’21)</em> (pp. 13–20). ACM.
+DOI: 10.1145/3474718.3474730.</li>
+<li>Ferrag, M. A., Friha, O., Hamouda, D., Maglaras, L., &amp; Janicke,
+H. (2022). Edge-IIoTset: A new comprehensive realistic cyber security
+dataset of IoT and IIoT applications for centralized and federated
+learning. <em>IEEE Access</em>, 10, 40281–40306.</li>
+<li>Holme, P., &amp; Saramäki, J. (2012). Temporal networks. <em>Physics
+Reports</em>, 519(3), 97–125.</li>
+<li>Huang, S., Poursafaei, F., Danovitch, J., Fey, M., Hu, W., Rossi,
+E., Leskovec, J., Bronstein, M., Rabusseau, G., &amp; Rabbany, R.
+(2023). Temporal graph benchmark for machine learning on temporal
+graphs. <em>Advances in Neural Information Processing Systems
+(NeurIPS)</em>, 36, 15615–15642.</li>
+<li>Liben-Nowell, D., &amp; Kleinberg, J. (2007). The link-prediction
+problem for social networks. <em>Journal of the American Society for
+Information Science and Technology</em>, 58(7), 1019–1031.</li>
+<li>Pareja, A., Domeniconi, G., Chen, J., Teng, Z., Pawar, T., Perugini,
+D., &amp; Kuleshov, V. (2020). EvolveGCN: Evolving graph convolutional
+networks for dynamic graphs. <em>Proceedings of the AAAI Conference on
+Artificial Intelligence</em>, 34(04), 5363–5370.</li>
+<li>Poursafaei, F., Huang, S., Pelrine, K., &amp; Rabbany, R. (2022).
+Towards better evaluation for dynamic link prediction. <em>Advances in
+Neural Information Processing Systems (NeurIPS)</em>, 35,
+32965–32977.</li>
+<li>Rossi, E., Chamberlain, B., Frasca, F., Eynard, D., Monti, F., &amp;
+Bronstein, M. (2020). Temporal graph networks for deep learning on
+dynamic graphs. <em>ICML Workshop on Graph Representation
+Learning</em>.</li>
+<li>Sankar, A., Wu, Y., Gou, L., Zhang, W., &amp; Yang, H. (2020).
+DySAT: Deep neural representation learning on dynamic graphs via
+self-attention networks. <em>Proceedings of the 13th International
+Conference on Web Search and Data Mining (WSDM)</em>, 519–527.</li>
+<li>Sharafaldin, I., Lashkari, A. H., &amp; Ghorbani, A. A. (2018).
+Toward generating a new intrusion detection dataset and intrusion
+traffic characterization. <em>Proceedings of the 4th International
+Conference on Information Systems Security and Privacy (ICISSP)</em>,
+108–116.</li>
+<li>Sommer, R., &amp; Paxson, V. (2010). Outside the closed world: On
+using machine learning for network intrusion detection. <em>IEEE
+Symposium on Security and Privacy (S&amp;P)</em>, 305–316.</li>
+<li>Wang, Y., Chang, Y.-Y., Liu, Y., Leskovec, J., &amp; Li, P. (2023).
+DyGLib: A unified library for dynamic graph learning. <em>Advances in
+Neural Information Processing Systems (NeurIPS)</em>, 36.</li>
+<li>Xu, D., Ruan, C., Korpeoglu, E., Kumar, S., &amp; Achan, K. (2020).
+Inductive representation learning on temporal graphs. <em>International
+Conference on Learning Representations (ICLR)</em>.</li>
+<li>APEX Research Team. (2026). <em>APEX-IDS2026: High-Confidence
+Enterprise Network Security Telemetry Dataset</em> [Data set]. Zenodo.
+https://doi.org/10.5281/zenodo.22013914</li>
+</ol>
+</body>
+</html>

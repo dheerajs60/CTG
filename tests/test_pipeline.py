@@ -13,6 +13,7 @@ import networkx as nx
 
 from main import compute_metrics, count_classes
 from detection.genesis_violation import compute_topology_metrics, calculate_gv_score
+from sklearn.metrics import accuracy_score, confusion_matrix
 
 def test_compute_metrics():
     # Test correct calculation from confusion matrices
@@ -67,27 +68,35 @@ def test_checkpoints_loaded():
     assert len(features) == 42
     
 def test_reproducible_predictions():
-    # Load dataset 2 and verify identical predictions to baseline
-    df_test = pd.read_csv("UNSW_NB15_testing-set(in).csv")
-    clf = joblib.load('results/checkpoints/lgbm_flownet.joblib')
-    scaler = joblib.load('results/checkpoints/scaler.joblib')
-    features = joblib.load('results/checkpoints/features_schema.joblib')
-    label_encoders = joblib.load('results/checkpoints/label_encoders.joblib')
-    
-    X_test_df = df_test[features].copy()
-    for c in X_test_df.select_dtypes(include=['object']).columns:
-        le = label_encoders[c]
-        test_vals = X_test_df[c].astype(str)
-        test_vals = test_vals.map(lambda s: s if s in le.classes_ else '<unknown>')
-        X_test_df[c] = le.transform(test_vals)
-        
-    X_test_scaled = pd.DataFrame(scaler.transform(X_test_df), columns=X_test_df.columns)
-    preds = clf.predict(X_test_scaled)
-    acc = accuracy_score(df_test['label'].values, preds) * 100
-    
-    assert np.isclose(acc, 91.3193, atol=1e-3), f"Accuracy changed! {acc}"
-    cm = confusion_matrix(df_test['label'].values, preds)
-    assert cm[0,0] == 31290
-    assert cm[0,1] == 5710
-    assert cm[1,0] == 1440
-    assert cm[1,1] == 43892
+    # Load dataset 2 and verify identical predictions to baseline in isolated subprocess
+    # (avoiding macOS Python 3.13 OpenMP segfault under pytest harness)
+    import subprocess, sys
+    code = """
+import joblib, pandas as pd, numpy as np
+from sklearn.metrics import accuracy_score, confusion_matrix
+df_test = pd.read_csv('UNSW_NB15_testing-set(in).csv')
+clf = joblib.load('results/checkpoints/lgbm_flownet.joblib')
+clf.set_params(n_jobs=1)
+scaler = joblib.load('results/checkpoints/scaler.joblib')
+features = joblib.load('results/checkpoints/features_schema.joblib')
+label_encoders = joblib.load('results/checkpoints/label_encoders.joblib')
+X_test_df = df_test[features].copy()
+for c in ['proto', 'service', 'state']:
+    le = label_encoders[c]
+    test_vals = X_test_df[c].astype(str).map(lambda s: s if s in le.classes_ else '<unknown>')
+    X_test_df[c] = le.transform(test_vals)
+X_test_scaled = pd.DataFrame(scaler.transform(X_test_df), columns=X_test_df.columns)
+preds = clf.predict(X_test_scaled)
+acc = accuracy_score(df_test['label'].values, preds) * 100
+assert np.isclose(acc, 91.3156, atol=1e-2)
+cm = confusion_matrix(df_test['label'].values, preds)
+assert cm[0,0] == 31290
+assert cm[0,1] == 5710
+assert cm[1,0] == 1440
+assert cm[1,1] == 43892
+print('PASS')
+"""
+    r = subprocess.run([sys.executable, '-c', code], capture_output=True, text=True)
+    assert r.returncode == 0, f"Subprocess failed with stderr:\n{r.stderr}"
+    assert "PASS" in r.stdout
+

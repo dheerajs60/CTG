@@ -310,6 +310,7 @@ def main():
         test_vals = test_vals.map(lambda s: s if s in le.classes_ else '<unknown>')
         le.classes_ = np.append(le.classes_, '<unknown>')
         X_test_df[c] = le.transform(test_vals)
+        label_encoders[c] = le
         
     scaler = StandardScaler()
     

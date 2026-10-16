@@ -1,8 +1,9 @@
 import pandas as pd
 from pathlib import Path
 
-EDGE_LISTS_DIR = Path("/Users/kovoordheeraj/Documents/CN Lab CTG/results/apex_ids2026/graphs/edge_lists")
-OUTPUT_DIR = Path("/Users/kovoordheeraj/Documents/CN Lab CTG/results/apex_ids2026/graphs")
+REPO_ROOT = Path(__file__).resolve().parent.parent
+EDGE_LISTS_DIR = REPO_ROOT / "results/apex_ids2026/graphs/edge_lists"
+OUTPUT_DIR = REPO_ROOT / "results/apex_ids2026/graphs"
 
 def compute_graph_dynamics():
     windows = sorted([d.name for d in EDGE_LISTS_DIR.iterdir() if d.is_dir()])

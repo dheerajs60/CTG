@@ -84,3 +84,8 @@ results/apex_ids2026/graphs/edge_lists/
 !results/metrics/
 !results/final_real/
 !figures/
+
+# Local audit and metric artifacts (excluded from git repository per user specification)
+CTG metrics/
+CTG_metrics.zip
+

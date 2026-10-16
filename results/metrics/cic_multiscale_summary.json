@@ -1,0 +1,47 @@
+{
+  "24h": {
+    "num_windows": 5,
+    "mean_edges_per_window": 35223.6,
+    "mean_nodes_per_window": 8831.8,
+    "mean_recurrence_rate": 0.3190960733238928,
+    "std_recurrence_rate": 0.014835235172932034,
+    "mean_novelty_rate": 0.6809039266761072,
+    "std_novelty_rate": 0.014835235172931994,
+    "mean_turnover_jaccard": 0.8160931864316769,
+    "std_turnover_jaccard": 0.004948114592737012,
+    "mean_turnover_dice": 0.6893442692266146,
+    "std_turnover_dice": 0.007057494415913019,
+    "mean_symmetric_turnover": 0.8160931864316769,
+    "std_symmetric_turnover": 0.004948114592737012
+  },
+  "6h": {
+    "num_windows": 15,
+    "mean_edges_per_window": 14019.0,
+    "mean_nodes_per_window": 4206.066666666667,
+    "mean_recurrence_rate": 0.2781134737836954,
+    "std_recurrence_rate": 0.16923407405075147,
+    "mean_novelty_rate": 0.7218865262163047,
+    "std_novelty_rate": 0.16923407405075147,
+    "mean_turnover_jaccard": 0.9084336956278555,
+    "std_turnover_jaccard": 0.04802123520521162,
+    "mean_turnover_dice": 0.835496307877542,
+    "std_turnover_dice": 0.07998965492011874,
+    "mean_symmetric_turnover": 0.9084336956278555,
+    "std_symmetric_turnover": 0.04802123520521162
+  },
+  "1h": {
+    "num_windows": 50,
+    "mean_edges_per_window": 5133.14,
+    "mean_nodes_per_window": 1878.48,
+    "mean_recurrence_rate": 0.23293118693079237,
+    "std_recurrence_rate": 0.18871396589404507,
+    "mean_novelty_rate": 0.7670688130692075,
+    "std_novelty_rate": 0.18871396589404507,
+    "mean_turnover_jaccard": 0.9211254294913662,
+    "std_turnover_jaccard": 0.04361768957963452,
+    "mean_turnover_dice": 0.8568115592478562,
+    "std_turnover_dice": 0.07650760367132477,
+    "mean_symmetric_turnover": 0.9211254294913662,
+    "std_symmetric_turnover": 0.04361768957963452
+  }
+}

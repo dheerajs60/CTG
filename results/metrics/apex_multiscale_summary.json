@@ -1,0 +1,53 @@
+{
+  "24h": {
+    "num_windows": 44,
+    "mean_edges_per_window": 203444.0,
+    "mean_nodes_per_window": 31566.81818181818,
+    "mean_recurrence_rate": 0.43750811131952194,
+    "std_recurrence_rate": 0.060663086553080205,
+    "mean_novelty_rate": 0.5624918886804781,
+    "std_novelty_rate": 0.0606630865530802,
+    "mean_turnover_jaccard": 0.7271082276710338,
+    "std_turnover_jaccard": 0.041520601842997405,
+    "mean_turnover_dice": 0.5731126717016223,
+    "std_turnover_dice": 0.059313286651562824,
+    "mean_symmetric_turnover": 0.7271082276710338,
+    "std_symmetric_turnover": 0.041520601842997405,
+    "mean_recurrence_non_boundary": 0.4322560508396735,
+    "mean_turnover_non_boundary": 0.722017638655247
+  },
+  "12h": {
+    "num_windows": 86,
+    "mean_edges_per_window": 132166.06976744186,
+    "mean_nodes_per_window": 21037.174418604653,
+    "mean_recurrence_rate": 0.4274401028875589,
+    "std_recurrence_rate": 0.0385986726606641,
+    "mean_novelty_rate": 0.572559897112441,
+    "std_novelty_rate": 0.0385986726606641,
+    "mean_turnover_jaccard": 0.731182194795336,
+    "std_turnover_jaccard": 0.02682687049464873,
+    "mean_turnover_dice": 0.577041033385057,
+    "std_turnover_dice": 0.036955720109065164,
+    "mean_symmetric_turnover": 0.731182194795336,
+    "std_symmetric_turnover": 0.02682687049464873,
+    "mean_recurrence_non_boundary": 0.42557475959414975,
+    "mean_turnover_non_boundary": 0.7290072922954817
+  },
+  "6h": {
+    "num_windows": 170,
+    "mean_edges_per_window": 83911.54705882353,
+    "mean_nodes_per_window": 14131.54705882353,
+    "mean_recurrence_rate": 0.40334075132766967,
+    "std_recurrence_rate": 0.038532153706789314,
+    "mean_novelty_rate": 0.5966592486723303,
+    "std_novelty_rate": 0.03853215370678932,
+    "mean_turnover_jaccard": 0.7485600019231203,
+    "std_turnover_jaccard": 0.027652772865006666,
+    "mean_turnover_dice": 0.5989536217275019,
+    "std_turnover_dice": 0.03622867052399552,
+    "mean_symmetric_turnover": 0.7485600019231203,
+    "std_symmetric_turnover": 0.027652772865006666,
+    "mean_recurrence_non_boundary": 0.40265601808103596,
+    "mean_turnover_non_boundary": 0.7476813694553074
+  }
+}
